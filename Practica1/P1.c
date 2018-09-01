@@ -13,6 +13,8 @@
 //*****************************************************************
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "tiempo.h"
 
 //*****************************************************************
 //Insercion
@@ -24,6 +26,7 @@
 //*****************************************************************#include <stdio.h>
 void Insercion(int A[], int n)
 {
+	uswtime(&utime0, &stime0, &wtime0);
 	int j, i, temp;
 	for(i=0; i<n; i++)
 	{
@@ -36,6 +39,16 @@ void Insercion(int A[], int n)
 		}
 		A[j]=temp;
 	}
+	uswtime(&utime1, &stime1, &wtime1);
+
+
+	//Cálculo del tiempo de ejecución del programa
+	printf("\n");
+	printf("real (Tiempo total)  %.15f s\n",  wtime1 - wtime0);
+	printf("user (Tiempo de procesamiento en CPU) %.15f s\n",  utime1 - utime0);
+	printf("sys (Tiempo en acciónes de E/S)  %.15f s\n",  stime1 - stime0);
+	printf("CPU/Wall   %.15f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
+	printf("\n");
 }
 
 //*****************************************************************
@@ -70,11 +83,18 @@ for(i=0; i<n; i++){
 
 int main(int argc, char *argv[])
 {
-	//Para probar el funcionamiento de los algoritmos
-	int arreglo[20] = {82, 54, 17, 30, 20, 65467896, 111, 981, 69, 21897, 47, 10, 13, 78, 100, 99 ,1000, 9 , 124, 23};
+	int n = atoi(argv[1]);
+	int *arreglo = (int*)calloc(n,sizeof(int));
 
-	Insercion(arreglo, 20);
-	printf("\n");
-	Seleccion(arreglo, 20);
+	for(int i=0; i<n; i++)
+	{
+		fscanf(stdin, "%d", &arreglo[i]);
+		//printf("%d\n", arreglo[i]);
+	}
+
+	Insercion(arreglo, n);
+
+  
+	//Seleccion(arreglo, n);
 }
 
