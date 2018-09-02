@@ -13,6 +13,8 @@
 //	***************************************************************
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "tiempo.h"
 
 //	***************************************************************
 //						BURBUJA SIMPLE
@@ -23,6 +25,9 @@
 //	***************************************************************
 void BurbujaSimple(int A[], int n)
 {
+	double utime0, stime0, wtime0,utime1, stime1, wtime1; //Variables para medición de tiempos
+	uswtime(&utime0, &stime0, &wtime0);
+
 	int j, i, aux;
 	for(i=0; i<=n-1; i++)
 	{
@@ -36,26 +41,32 @@ void BurbujaSimple(int A[], int n)
 			}
 		}
 	}
+	uswtime(&utime1, &stime1, &wtime1);
+
+	//Cálculo del tiempo de ejecución del programa
+	printf("\nBurbujaSimple\n");
+	printf("real (Tiempo total)  %.30f s\n",  wtime1 - wtime0);
+	printf("user (Tiempo de procesamiento en CPU) %.30f s\n",  utime1 - utime0);
+	printf("sys (Tiempo en acciónes de E/S)  %.30f s\n",  stime1 - stime0);
+	printf("CPU/Wall   %.30f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
+	printf("\n");
 }
 
 int main(int argc, char *argv[])
 {
-	//Para probar el funcionamiento de los algoritmos
-	int arreglo[20] = {82, 54, 17, 30, 20, 65467896, 111, 981, 69, 21897, 47, 10, 13, 78, 100, 99 ,1000, 9 , 124, 23};
-	int i;
-	/* printf("ARREGLO INICIAL\n");
-	for(i=0; i<20; i++)
-	{
-		printf("Numero %d . %d \n",i, arreglo[i]);
+		//Obtenemos n como parametro del main y creamos una arreglo dinamico
+	int n = atoi(argv[1]);
+	int *arreglo = (int*)calloc(n,sizeof(int));
+
+	//Con este for vamos agregando los n valores del txt al arreglo
+	for(int i=0; i<n; i++){
+		fscanf(stdin, "%d", &arreglo[i]);
 	}
-	*/
-	BurbujaSimple(arreglo, 20);
-	/*printf("\n");
-	printf("ARREGLO FINAL\n");
-	for(i=0; i<20; i++)
-	{
-		printf("Numero %d . %d \n",i, arreglo[i]);
-	}
-	*/
+
+	printf("n = %d\n", n);
+	BurbujaSimple(arreglo, n);
+	printf("------------------------------------\n");
+	
+
 }
 
