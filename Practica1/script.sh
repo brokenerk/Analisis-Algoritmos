@@ -3,6 +3,19 @@
 clear
 gcc tiempo.c -c
 
+gcc BurbujaSimple.c tiempo.o -o BurbujaSimple
+./BurbujaSimple 100 <numeros10millones.txt >>salida.txt
+./BurbujaSimple 1000 <numeros10millones.txt >>salida.txt
+./BurbujaSimple 5000 <numeros10millones.txt >>salida.txt
+./BurbujaSimple 10000 <numeros10millones.txt >>salida.txt
+
+
+gcc BurbujaOptimizada.c tiempo.o -o BurbujaOptimizada
+./BurbujaOptimizada 100 <numeros10millones.txt >>salida.txt
+./BurbujaOptimizada 1000 <numeros10millones.txt >>salida.txt
+./BurbujaOptimizada 5000 <numeros10millones.txt >>salida.txt
+./BurbujaOptimizada 10000 <numeros10millones.txt >>salida.txt
+
 gcc Insercion.c tiempo.o -o Insercion
 ./Insercion 100 <numeros10millones.txt >>salida.txt
 ./Insercion 1000 <numeros10millones.txt >>salida.txt
