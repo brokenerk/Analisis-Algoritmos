@@ -4,8 +4,8 @@
 // 	Ramos Diaz Enrique
 // ****************************************************************
 //	Practica 1: Analisis de algoritmos de ordenamiento numerico
-//	Compilación: "gcc BurbujaSimpleOptimizada.c -o BurbujaSO
-//	Ejecución: "./BurbujaSimpleOptimizada.out" (Linux)
+//	Compilación: "gcc BurbujaOptimizada.c -o BurbujaSO
+//	Ejecución: "./BurbujaOptimizada.out" (Linux)
 //	***************************************************************
 
 //	***************************************************************
@@ -26,7 +26,7 @@ typedef int bool;
 //	Recibe: El arreglo de números, y la cantidad de números que se ordenaran
 //	Devuelve: Nada.
 //	***************************************************************
-void BurbujaSimpleOptimizada(int A[], int n)
+void BurbujaOptimizada(int A[], int n)
 {
 	double utime0, stime0, wtime0,utime1, stime1, wtime1; //Variables para medición de tiempos
 	uswtime(&utime0, &stime0, &wtime0);
@@ -53,7 +53,7 @@ void BurbujaSimpleOptimizada(int A[], int n)
 	uswtime(&utime1, &stime1, &wtime1);
 
 	//Cálculo del tiempo de ejecución del programa
-	printf("\nBurbujaSimpleOtimizada\n");
+	printf("\nBurbujaOptimizada\n");
 	printf("real (Tiempo total)  %.30f s\n",  wtime1 - wtime0);
 	printf("user (Tiempo de procesamiento en CPU) %.30f s\n",  utime1 - utime0);
 	printf("sys (Tiempo en acciónes de E/S)  %.30f s\n",  stime1 - stime0);
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	}
 
 	printf("n = %d\n", n);
-	BurbujaSimpleOptimizada(arreglo, n);
+	BurbujaOptimizada(arreglo, n);
 	printf("------------------------------------\n");
 	
 
