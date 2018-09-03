@@ -11,7 +11,7 @@ Observaciones:
 //LIBRERÍAS
 #include <stdio.h>
 #include <stdlib.h>
-#include "BinarySearchTreeSort.h"
+#include "ArbolBinario.h"
 #include "tiempo.h"
 #include "imprimeTiempos.h"
 
@@ -30,20 +30,28 @@ Variables usadas en el programa:
 */
 int main(int argc, char **argv)
 {
-	int i;
-	int size = atoi(argv[1]);
-	int *Data;
-	double utime0, stime0, wtime0, utime1, stime1, wtime1; //Variables para medición de tiempos
-	Data = calloc(size, sizeof(int));
-	for (i = 0; i < size; i++)
-	{
-		scanf("%d", Data + i);
+		//Creamos arreglo dinámico
+	int n = atoi(argv[1]);
+	int *arreglo = (int*)calloc(n,sizeof(int));
+	int i=0;
+	//Agregamos los n valores del txt al arreglo
+	for(i=0; i<n; i++){
+		fscanf(stdin, "%d", &arreglo[i]);
 	}
+
+	printf("n = %d\n", n);
+	double utime0, stime0, wtime0,utime1, stime1, wtime1; //Variables para medición de tiempos
 	uswtime(&utime0, &stime0, &wtime0);
-	BinarySearchTreeSort(Data, size);
+	BinarySearchTreeSort(arreglo, n);
+	
 	uswtime(&utime1, &stime1, &wtime1);
-	imprimeTiempos(size, utime0, stime0, wtime0, utime1, stime1, wtime1);
-	/* for (i = 0; i < size; i++)
-		printf("\n%d", Data[i]); */
-	free(Data);
+
+	//Cálculo del tiempo de ejecución del programa
+	printf("\nSeleccion\n");
+	printf("real (Tiempo total)  %.30f s\n",  wtime1 - wtime0);
+	printf("user (Tiempo de procesamiento en CPU) %.30f s\n",  utime1 - utime0);
+	printf("sys (Tiempo en acciónes de E/S)  %.30f s\n",  stime1 - stime0);
+	printf("CPU/Wall   %.30f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
+	printf("\n");
+	return 0;
 }
