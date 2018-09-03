@@ -1,0 +1,450 @@
+n = 100
+
+BurbujaSimple
+real (Tiempo total)  0.00003790855407714843750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00004200000000000015352996651785134 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   110.79293584905700242870807414874434471 % 
+
+------------------------------------
+n = 500
+
+BurbujaSimple
+real (Tiempo total)  0.00047707557678222656250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00047999999999999995795030294232220 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   100.61298950524736994793784106150269508 % 
+
+------------------------------------
+n = 800
+
+BurbujaSimple
+real (Tiempo total)  0.00108814239501953125000000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00000000000000000000000000000000000 s
+sys (Tiempo en acciónes de E/S)  0.00109099999999999995592414592238129 s
+CPU/Wall   100.26261314636283827894658315926790237 % 
+
+------------------------------------
+n = 1000
+
+BurbujaSimple
+real (Tiempo total)  0.00172591209411621093750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00172799999999999993535726439120026 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   100.12097405719021026015980169177055359 % 
+
+------------------------------------
+n = 1500
+
+BurbujaSimple
+real (Tiempo total)  0.00720596313476562500000000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00271200000000000000094368957093138 s
+sys (Tiempo en acciónes de E/S)  0.00104500000000000013884726701718364 s
+CPU/Wall   52.13737469560614101737883174791932106 % 
+
+------------------------------------
+n = 2000
+
+BurbujaSimple
+real (Tiempo total)  0.01244306564331054687500000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00583899999999999957250862436808347 s
+sys (Tiempo en acciónes de E/S)  0.00148799999999999973954167842293828 s
+CPU/Wall   58.88420273615633249164602602832019329 % 
+
+------------------------------------
+n = 4000
+
+BurbujaSimple
+real (Tiempo total)  0.07467985153198242187500000000000000 s
+user (Tiempo de procesamiento en CPU) 0.03493399999999999977484677060601825 s
+sys (Tiempo en acciónes de E/S)  0.00183100000000000016214807274650411 s
+CPU/Wall   49.23014607796189068267267430201172829 % 
+
+------------------------------------
+n = 6000
+
+BurbujaSimple
+real (Tiempo total)  0.15607619285583496093750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.07539300000000000168132174849233706 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   48.30525310778133274425272247754037380 % 
+
+------------------------------------
+n = 8000
+
+BurbujaSimple
+real (Tiempo total)  0.17156410217285156250000000000000000 s
+user (Tiempo de procesamiento en CPU) 0.14565999999999998393285238762473455 s
+sys (Tiempo en acciónes de E/S)  0.00078899999999999933728012102562843 s
+CPU/Wall   85.36109719063021827878401381894946098 % 
+
+------------------------------------
+n = 10000
+
+BurbujaSimple
+real (Tiempo total)  0.28875899314880371093750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.24316599999999996550847924936533673 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   84.21071058198741354772209888324141502 % 
+
+------------------------------------
+n = 15000
+
+BurbujaSimple
+real (Tiempo total)  0.91809701919555664062500000000000000 s
+user (Tiempo de procesamiento en CPU) 0.56628400000000000957811607804615051 s
+sys (Tiempo en acciónes de E/S)  0.00665999999999999925393012745189480 s
+CPU/Wall   62.40560507450702232290495885536074638 % 
+
+------------------------------------
+n = 20000
+
+BurbujaSimple
+real (Tiempo total)  1.58019089698791503906250000000000000 s
+user (Tiempo de procesamiento en CPU) 1.04645799999999988827426022908184677 s
+sys (Tiempo en acciónes de E/S)  0.01320599999999999898947500298618252 s
+CPU/Wall   67.05923961591483362099097575992345810 % 
+
+------------------------------------
+n = 40000
+
+BurbujaSimple
+real (Tiempo total)  8.45259094238281250000000000000000000 s
+user (Tiempo de procesamiento en CPU) 4.66732800000000036533265301841311157 s
+sys (Tiempo en acciónes de E/S)  0.02809699999999999697752883776047383 s
+CPU/Wall   55.55012696114624759502476081252098083 % 
+
+------------------------------------
+n = 60000
+
+BurbujaSimple
+real (Tiempo total)  20.97909688949584960937500000000000000 s
+user (Tiempo de procesamiento en CPU) 10.33105300000000070781425165478140116 s
+sys (Tiempo en acciónes de E/S)  0.10750799999999999245758885990653653 s
+CPU/Wall   49.75696072611470555102641810663044453 % 
+
+------------------------------------
+n = 80000
+
+BurbujaSimple
+real (Tiempo total)  36.00872087478637695312500000000000000 s
+user (Tiempo de procesamiento en CPU) 18.57933299999999832152752787806093693 s
+sys (Tiempo en acciónes de E/S)  0.09678699999999998415667334938916611 s
+CPU/Wall   51.86554686278006442989862989634275436 % 
+
+------------------------------------
+n = 90000
+
+BurbujaSimple
+real (Tiempo total)  38.71759104728698730468750000000000000 s
+user (Tiempo de procesamiento en CPU) 23.10308099999999953411133901681751013 s
+sys (Tiempo en acciónes de E/S)  0.00567099999999999895838875829667813 s
+CPU/Wall   59.68540752387350067920124274678528309 % 
+
+------------------------------------
+n = 100000
+
+BurbujaSimple
+real (Tiempo total)  34.32539296150207519531250000000000000 s
+user (Tiempo de procesamiento en CPU) 28.49057499999999976125764078460633755 s
+sys (Tiempo en acciónes de E/S)  0.00662499999999999894528812660610129 s
+CPU/Wall   83.02075385403821883301134221255779266 % 
+
+------------------------------------
+n = 120000
+
+BurbujaSimple
+real (Tiempo total)  45.06316804885864257812500000000000000 s
+user (Tiempo de procesamiento en CPU) 40.59633300000000133422872750088572502 s
+sys (Tiempo en acciónes de E/S)  0.00670199999999999962430052846684703 s
+CPU/Wall   90.10248670483430544209113577380776405 % 
+
+------------------------------------
+n = 150000
+
+BurbujaSimple
+real (Tiempo total)  69.61539506912231445312500000000000000 s
+user (Tiempo de procesamiento en CPU) 63.61068300000000164118318934924900532 s
+sys (Tiempo en acciónes de E/S)  0.02742299999999999599031852426378464 s
+CPU/Wall   91.41384019556684847884753253310918808 % 
+
+------------------------------------
+n = 200000
+
+BurbujaSimple
+real (Tiempo total)  125.89579701423645019531250000000000000 s
+user (Tiempo de procesamiento en CPU) 113.92560100000000034015101846307516098 s
+sys (Tiempo en acciónes de E/S)  0.01643800000000000122168941629752226 s
+CPU/Wall   90.50503805708088123083143727853894234 % 
+
+------------------------------------
+n = 100
+
+BurbujaOptimizada
+real (Tiempo total)  0.00002598762512207031250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00003000000000000007868705687030797 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   115.43955963302782663504331139847636223 % 
+
+------------------------------------
+n = 500
+
+BurbujaOptimizada
+real (Tiempo total)  0.00054407119750976562500000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00052700000000000001617456169000775 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   96.86232287467134938196977600455284119 % 
+
+------------------------------------
+n = 800
+
+BurbujaOptimizada
+real (Tiempo total)  0.00117111206054687500000000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00116599999999999993580135360105032 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   99.56348664495114064720837632194161415 % 
+
+------------------------------------
+n = 1000
+
+BurbujaOptimizada
+real (Tiempo total)  0.00197100639343261718750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00197099999999999966199260015287109 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   99.99967562598280323982180561870336533 % 
+
+------------------------------------
+n = 1500
+
+BurbujaOptimizada
+real (Tiempo total)  0.00856614112854003906250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00417199999999999949357176731723484 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   48.70337690445043676845671143382787704 % 
+
+------------------------------------
+n = 2000
+
+BurbujaOptimizada
+real (Tiempo total)  0.01046204566955566406250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00550799999999999987526644318336366 s
+sys (Tiempo en acciónes de E/S)  0.00137999999999999993331722958345154 s
+CPU/Wall   65.83798443973473979440313996747136116 % 
+
+------------------------------------
+n = 4000
+
+BurbujaOptimizada
+real (Tiempo total)  0.06998991966247558593750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.03037799999999999875366363255579927 s
+sys (Tiempo en acciónes de E/S)  0.00231200000000000025282553828276377 s
+CPU/Wall   46.70672599375252787012868793681263924 % 
+
+------------------------------------
+n = 6000
+
+BurbujaOptimizada
+real (Tiempo total)  0.16584515571594238281250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.08058799999999999297273234333260916 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   48.59231471194140539182626525871455669 % 
+
+------------------------------------
+n = 8000
+
+BurbujaOptimizada
+real (Tiempo total)  0.15677809715270996093750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.14497799999999999576161258119100239 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   92.47337646838764158019330352544784546 % 
+
+------------------------------------
+n = 10000
+
+BurbujaOptimizada
+real (Tiempo total)  0.29671692848205566406250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.23672399999999998998490013946138788 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   79.78109008172621940957469632849097252 % 
+
+------------------------------------
+n = 15000
+
+BurbujaOptimizada
+real (Tiempo total)  0.61575102806091308593750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.55892200000000002990674374814261682 s
+sys (Tiempo en acciónes de E/S)  0.00263000000000000039301895071730542 s
+CPU/Wall   91.19789889241542368836235255002975464 % 
+
+------------------------------------
+n = 20000
+
+BurbujaOptimizada
+real (Tiempo total)  1.12123608589172363281250000000000000 s
+user (Tiempo de procesamiento en CPU) 1.03431500000000009542588941258145496 s
+sys (Tiempo en acciónes de E/S)  0.00116199999999999983857357221950224 s
+CPU/Wall   92.35138014457328381467959843575954437 % 
+
+------------------------------------
+n = 40000
+
+BurbujaOptimizada
+real (Tiempo total)  4.96656703948974609375000000000000000 s
+user (Tiempo de procesamiento en CPU) 4.54085300000000025022472982527688146 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   91.42840444707894675957504659891128540 % 
+
+------------------------------------
+n = 60000
+
+BurbujaOptimizada
+real (Tiempo total)  11.57947397232055664062500000000000000 s
+user (Tiempo de procesamiento en CPU) 10.30851200000000034151526051573455334 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   89.02400942081955292906059185042977333 % 
+
+------------------------------------
+n = 80000
+
+BurbujaOptimizada
+real (Tiempo total)  21.15674901008605957031250000000000000 s
+user (Tiempo de procesamiento en CPU) 18.48690099999999958413354761432856321 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   87.38063202048073208061396144330501556 % 
+
+------------------------------------
+n = 90000
+
+BurbujaOptimizada
+real (Tiempo total)  25.99217796325683593750000000000000000 s
+user (Tiempo de procesamiento en CPU) 23.33672699999999977649167703930288553 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   89.78365350140859391103731468319892883 % 
+
+------------------------------------
+n = 100000
+
+BurbujaOptimizada
+real (Tiempo total)  29.47539186477661132812500000000000000 s
+user (Tiempo de procesamiento en CPU) 28.65938500000000033196556614711880684 s
+sys (Tiempo en acciónes de E/S)  0.00011900000000000104938280287569796 s
+CPU/Wall   97.23196940512397645761666353791952133 % 
+
+------------------------------------
+n = 120000
+
+BurbujaOptimizada
+real (Tiempo total)  44.48436808586120605468750000000000000 s
+user (Tiempo de procesamiento en CPU) 41.87613400000000041245584725402295589 s
+sys (Tiempo en acciónes de E/S)  0.00329400000000000178768111425142706 s
+CPU/Wall   94.14414501554053060772275784984230995 % 
+
+------------------------------------
+n = 150000
+
+BurbujaOptimizada
+real (Tiempo total)  69.18493413925170898437500000000000000 s
+user (Tiempo de procesamiento en CPU) 65.20446200000000658292265143245458603 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   94.24662003545449806551914662122726440 % 
+
+------------------------------------
+n = 200000
+
+BurbujaOptimizada
+real (Tiempo total)  123.05017590522766113281250000000000000 s
+user (Tiempo de procesamiento en CPU) 115.45370699999999430929165100678801537 s
+sys (Tiempo en acciónes de E/S)  0.01662100000000000382671672127798956 s
+CPU/Wall   93.84003488864118480705656111240386963 % 
+
+------------------------------------
+n = 100
+
+Insercion
+real (Tiempo total)  0.00000810623168945312500000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00000000000000000000000000000000000 s
+sys (Tiempo en acciónes de E/S)  0.00001099999999999994211574705360590 s
+CPU/Wall   135.69807058823457168728054966777563095 % 
+
+------------------------------------
+n = 1000
+
+Insercion
+real (Tiempo total)  0.00067496299743652343750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00067800000000000000023592239273285 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   100.44995097138820483451127074658870697 % 
+
+------------------------------------
+n = 5000
+
+Insercion
+real (Tiempo total)  0.01806092262268066406250000000000000 s
+user (Tiempo de procesamiento en CPU) 0.00956599999999999985045295858299141 s
+sys (Tiempo en acciónes de E/S)  0.00757999999999999993227639549786545 s
+CPU/Wall   94.93424205510012825470766983926296234 % 
+
+------------------------------------
+n = 10000
+
+Insercion
+real (Tiempo total)  0.07591795921325683593750000000000000 s
+user (Tiempo de procesamiento en CPU) 0.06726999999999999646504988959350158 s
+sys (Tiempo en acciónes de E/S)  0.00089200000000000043143266736933583 s
+CPU/Wall   89.78376224330528998507361393421888351 % 
+
+------------------------------------
+n = 50000
+
+Insercion
+real (Tiempo total)  1.91829800605773925781250000000000000 s
+user (Tiempo de procesamiento en CPU) 1.64122199999999995867483448819257319 s
+sys (Tiempo en acciónes de E/S)  0.00236199999999999951660889507820684 s
+CPU/Wall   85.67928417846300703786255326122045517 % 
+
+------------------------------------
+n = 100000
+
+Insercion
+real (Tiempo total)  6.98440289497375488281250000000000000 s
+user (Tiempo de procesamiento en CPU) 6.49953000000000002955857780762016773 s
+sys (Tiempo en acciónes de E/S)  0.00000000000000000000000000000000000 s
+CPU/Wall   93.05777598651005177998740691691637039 % 
+
+------------------------------------
+n = 200000
+
+Insercion
+real (Tiempo total)  27.77281808853149414062500000000000000 s
+user (Tiempo de procesamiento en CPU) 25.81708799999999826013663550838828087 s
+sys (Tiempo en acciónes de E/S)  0.00438399999999999900879288361466024 s
+CPU/Wall   92.97389957939743965198431396856904030 % 
+
+------------------------------------
+n = 400000
+
+Insercion
+real (Tiempo total)  112.68221092224121093750000000000000000 s
+user (Tiempo de procesamiento en CPU) 103.94672599999999818010110175237059593 s
+sys (Tiempo en acciónes de E/S)  0.03824199999999999821653773324214853 s
+CPU/Wall   92.28161849944270045398297952488064766 % 
+
+------------------------------------
+n = 600000
+
+Insercion
+real (Tiempo total)  249.99582099914550781250000000000000000 s
+user (Tiempo de procesamiento en CPU) 233.33149500000001808075467124581336975 s
+sys (Tiempo en acciónes de E/S)  0.23984999999999997988275879379216349 s
+CPU/Wall   93.43009977786722686232678825035691261 % 
+
+------------------------------------
+n = 800000
+
+Insercion
+real (Tiempo total)  607.27325296401977539062500000000000000 s
+user (Tiempo de procesamiento en CPU) 418.97128700000001799708115868270397186 s
+sys (Tiempo en acciónes de E/S)  0.80226900000000000989786030913819559 s
+CPU/Wall   69.12432812595339726158272242173552513 % 
+
+------------------------------------
