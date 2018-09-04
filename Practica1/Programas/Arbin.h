@@ -54,7 +54,7 @@ Arbin consA(int r, Arbin i, Arbin d)
 //	***************************************************************
 //	Descripción: Indica si un arbol binario esta vacio
 //	Recibe: Nada
-//	Devuelve: Un booleano indicando si el arbol esta vacio
+//	Devuelve: Un entero (0/1) indicando si el arbol esta vacio
 //	***************************************************************
 int esvacioA(Arbin a) {return a==NULL;}
 
@@ -85,22 +85,7 @@ Arbin izquierdo(Arbin a) {return a->izq;}
 //	***************************************************************
 Arbin derecho(Arbin a) {return a->der;}
 
-//	***************************************************************
-//						ImpInOrden
-//	***************************************************************
-//	Descripción: Imprime inorden un arbol binario
-//	Recibe: Un arbol binario
-//	Devuelve: Nada, pero imprime los elementos del arbol ordenados
-//	***************************************************************
-void ImpInOrd (Arbin a)
-{
-	if (!esvacioA(a))
-	{
-		ImpInOrd(izquierdo(a));
-		printf("%d\n",raiz(a));
-		ImpInOrd(derecho(a));
-	}
-}
+
 
 
 

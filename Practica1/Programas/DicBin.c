@@ -14,47 +14,75 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Arbin.h"
+#include "Pila.h"
 #include "tiempo.h"
 
 //Un diccionario de datos es un arbol binario
 //Declaramos un tipo de dato Arbin para nuestro diccionario binario
 typedef Arbin DicBin;
+Pila stack;
 
 //	***************************************************************
 //						InsertaOrden
 //	***************************************************************
-//	Descripción: Inserta en orden un arreglo de números
-//	Recibe: Un entero y un Diccionario Binario vacio
-//	Devuelve: Un Diccionario Binario ordenado
+//	Descripción: Inserta un arreglo de números en un Diccionario Binario
+//	Recibe: Un Diccionario Binario vacio y un entero
+//	Devuelve: Nada, pero construye el arbol binario
 //	***************************************************************
-DicBin InsertaOrden(int e, DicBin a)
+DicBin Insertar(DicBin a, int e)
 {
-	
 	if(esvacioA(a))
 		return consA(e,vacioA(),vacioA());
 	if (e < raiz(a))
-		return consA(raiz(a), InsertaOrden(e,izquierdo(a)), derecho(a));
+		return consA(raiz(a), Insertar(izquierdo(a),e), derecho(a));
 	else
-		return consA(raiz(a), izquierdo(a), InsertaOrden(e,derecho(a)));
+		return consA(raiz(a), izquierdo(a), Insertar(derecho(a),e));
 }
 
-int main(int argc, char *argv[])
+//	***************************************************************
+//						GuardarRecorridoInOrden
+//	***************************************************************
+//	Descripción: Guarda los elementos de un arbol en un arreglo
+//	Recibe: Un arbol binario y un arreglo
+//	Devuelve: Nada, pero coloca los elementos del arbol ordenados
+//			  dentro del arreglo
+//	***************************************************************
+void GuardarRecorridoInOrden (Arbin a)
 {
-	//Obtenemos n como parametro del main y creamos una arreglo dinamico
-	int n = atoi(argv[1]);
-	int *arreglo = (int*)calloc(n,sizeof(int));
+	if (!esvacioA(a))
+	{
+		GuardarRecorridoInOrden(derecho(a));
+		//Vamos metiendo los elementos ordenados a una pila
+		stack=push(raiz(a), stack);
+		GuardarRecorridoInOrden(izquierdo(a));
+	}
+}
 
-	printf("n = %d\n", n);
-
+//	***************************************************************
+//						OrdenaConArbolBinario
+//	***************************************************************
+//	Descripción: Ordena un arreglo de numeros utilizando diccionarios binarios
+//	Recibe: Un arreglo de enteros y el tamaño del arreglo
+//	Devuelve: Nada, pero ordena los elementos del arreglo
+//	***************************************************************
+void OrdenaConArbolBinario(int A[], int n)
+{
 	double utime0, stime0, wtime0,utime1, stime1, wtime1; //Variables para medición de tiempos
 	uswtime(&utime0, &stime0, &wtime0);
 
-	DicBin a=vacioA();//Declaramos un diccionario binario
-	//Con este for vamos agregando los n valores del txt al arreglo
-	for(int i=0; i<n; i++){
-		fscanf(stdin, "%d", &arreglo[i]);
-		//Le enviamos los elementos al diccionario de busqueda para que los agregue en orden recursivamente
-		a=InsertaOrden(arreglo[i],a);
+	DicBin ArbolBinBusqueda = vacioA();//Declaramos un diccionario binario
+	int i;
+
+	for(i=0; i<n; i++){
+		ArbolBinBusqueda = Insertar(ArbolBinBusqueda, A[i]);
+	}
+
+	GuardarRecorridoInOrden(ArbolBinBusqueda);
+
+	//Copiamos el contenido de la pila al arreglo
+	for(i=0; i<n; i++){
+		A[i]=top(stack);
+		stack=pop(stack);
 	}
 
 	uswtime(&utime1, &stime1, &wtime1);
@@ -66,10 +94,26 @@ int main(int argc, char *argv[])
 	printf("sys (Tiempo en acciónes de E/S)  %.35f s\n",  stime1 - stime0);
 	printf("CPU/Wall   %.35f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 	printf("\n");
-	printf("------------------------------------\n");
-	//Imprimimos InOrden
-	//ImpInOrd(a);
 
+	/*for(i=0; i<n; i++){
+		printf("%d \n", A[i]);
+	}*/
+}
+
+int main(int argc, char *argv[])
+{
+	//Obtenemos n como parametro del main y creamos una arreglo dinamico
+	int n = atoi(argv[1]);
+	int *arreglo = (int*)calloc(n,sizeof(int));
+
+	printf("n = %d\n", n);
+	//Con este for vamos agregando los n valores del txt al arreglo
+	for(int i=0; i<n; i++){
+		fscanf(stdin, "%d", &arreglo[i]);
+	}
+
+	OrdenaConArbolBinario(arreglo, n);
+	printf("------------------------------------\n");
 
 	return 0;
 }
