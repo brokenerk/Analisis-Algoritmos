@@ -208,9 +208,9 @@
 	void BurbujaSimple(int A[], int n)
 	{
 		int j, i, aux;
-		for(i=0; i<=n-1; i++)
+		for(i = 0; i <= n-1; i++)
 		{
-			for(j=0; j<=(n-2)-i; j++)
+			for(j = 0; j <= (n-2)-i; j++)
 			{
 				if (A[j] > A[j+1])
 				{
@@ -252,9 +252,7 @@
 			}
 			else
 				salida(c, b, a);
-
 		}
-
 	}
 
 /*
