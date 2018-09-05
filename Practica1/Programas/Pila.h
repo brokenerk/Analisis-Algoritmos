@@ -38,9 +38,9 @@ Pila empty(){return NULL;}
 //	***************************************************************
 Pila push(int e, Pila p)//Inserta valores a la pila
 {
-	Pila t=(Pila)malloc(sizeof(struct Nodo));
-	t->dato= e;
-	t->sig= p;
+	Pila t = (Pila)malloc(sizeof(struct Nodo));
+	t -> dato = e;
+	t -> sig = p;
 	return t;
 }
 
@@ -51,7 +51,7 @@ Pila push(int e, Pila p)//Inserta valores a la pila
 //	Recibe: Una pila
 //	Devuelve: Un entero (0/1) indicando si la pila esta vacia
 //	***************************************************************
-int isempty(Pila p){return p==NULL;}//Devuelve un booleano
+int isempty(Pila p){return p == NULL;}//Devuelve un booleano
 
 //	***************************************************************
 //						top

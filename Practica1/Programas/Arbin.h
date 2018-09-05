@@ -42,10 +42,10 @@ Arbin vacioA() {return NULL;}
 
 Arbin consA(int r, Arbin i, Arbin d)
 {
-	Arbin t=(Arbin)malloc(sizeof(struct NodoA));
-	t->raiz=r;
-	t->izq=i;
-	t->der=d;
+	Arbin t = (Arbin)malloc(sizeof(struct NodoA));
+	t -> raiz = r;
+	t -> izq = i;
+	t -> der = d;
 	return t;
 }
 
