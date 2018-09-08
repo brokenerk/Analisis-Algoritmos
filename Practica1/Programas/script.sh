@@ -57,25 +57,25 @@ gcc Shell.c tiempo.o -o Shell
 ./Shell 9000000 <numeros10millones.txt >>salida.txt
 ./Shell 10000000 <numeros10millones.txt >>salida.txt
 
-gcc DicBin.c tiempo.o -o DicBin
-./DicBin 100 <numeros10millones.txt >>salida.txt
-./DicBin 1000 <numeros10millones.txt >>salida.txt
-./DicBin 5000 <numeros10millones.txt >>salida.txt
-./DicBin 10000 <numeros10millones.txt >>salida.txt
-./DicBin 50000 <numeros10millones.txt >>salida.txt
-./DicBin 100000 <numeros10millones.txt >>salida.txt
-./DicBin 200000 <numeros10millones.txt >>salida.txt
-./DicBin 400000 <numeros10millones.txt >>salida.txt
-./DicBin 600000 <numeros10millones.txt >>salida.txt
-./DicBin 800000 <numeros10millones.txt >>salida.txt
-./DicBin 1000000 <numeros10millones.txt >>salida.txt
-./DicBin 2000000 <numeros10millones.txt >>salida.txt
-./DicBin 3000000 <numeros10millones.txt >>salida.txt
-./DicBin 4000000 <numeros10millones.txt >>salida.txt
-./DicBin 5000000 <numeros10millones.txt >>salida.txt
-./DicBin 6000000 <numeros10millones.txt >>salida.txt
-./DicBin 7000000 <numeros10millones.txt >>salida.txt
-./DicBin 8000000 <numeros10millones.txt >>salida.txt
-./DicBin 9000000 <numeros10millones.txt >>salida.txt
-./DicBin 10000000 <numeros10millones.txt >>salida.txt
+gcc ABB.c tiempo.o -o ABB
+./ABB 100 <numeros10millones.txt >>salida.txt
+./ABB 1000 <numeros10millones.txt >>salida.txt
+./ABB 5000 <numeros10millones.txt >>salida.txt
+./ABB 10000 <numeros10millones.txt >>salida.txt
+./ABB 50000 <numeros10millones.txt >>salida.txt
+./ABB 100000 <numeros10millones.txt >>salida.txt
+./ABB 200000 <numeros10millones.txt >>salida.txt
+./ABB 400000 <numeros10millones.txt >>salida.txt
+./ABB 600000 <numeros10millones.txt >>salida.txt
+./ABB 800000 <numeros10millones.txt >>salida.txt
+./ABB 1000000 <numeros10millones.txt >>salida.txt
+./ABB 2000000 <numeros10millones.txt >>salida.txt
+./ABB 3000000 <numeros10millones.txt >>salida.txt
+./ABB 4000000 <numeros10millones.txt >>salida.txt
+./ABB 5000000 <numeros10millones.txt >>salida.txt
+./ABB 6000000 <numeros10millones.txt >>salida.txt
+./ABB 7000000 <numeros10millones.txt >>salida.txt
+./ABB 8000000 <numeros10millones.txt >>salida.txt
+./ABB 9000000 <numeros10millones.txt >>salida.txt
+./ABB 10000000 <numeros10millones.txt >>salida.txt
 

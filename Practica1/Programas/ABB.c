@@ -33,7 +33,7 @@ DicBin Insertar(DicBin a, int e)
 {
 	if(esvacioA(a))
 		return consA(e,vacioA(),vacioA());
-	if (e < raiz(a))
+	if (e < raiz(a))	
 		return consA(raiz(a), Insertar(izquierdo(a),e), derecho(a));
 	else
 		return consA(raiz(a), izquierdo(a), Insertar(derecho(a),e));
@@ -51,10 +51,10 @@ void GuardarRecorridoInOrden (Arbin a)
 {
 	if (!esvacioA(a))
 	{
-		GuardarRecorridoInOrden(derecho(a));
+		GuardarRecorridoInOrden(izquierdo(a));
 		//Vamos metiendo los elementos ordenados a una pila
 		stack=push(raiz(a), stack);
-		GuardarRecorridoInOrden(izquierdo(a));
+		GuardarRecorridoInOrden(derecho(a));
 	}
 }
 
@@ -71,7 +71,7 @@ void OrdenaConArbolBinario(int A[], int n)
 	uswtime(&utime0, &stime0, &wtime0);
 
 	DicBin ArbolBinBusqueda = vacioA();//Declaramos un diccionario binario
-	int i;
+	int i, j=0;
 
 	for(i=0; i<n; i++){
 		ArbolBinBusqueda = Insertar(ArbolBinBusqueda, A[i]);
@@ -80,7 +80,8 @@ void OrdenaConArbolBinario(int A[], int n)
 	GuardarRecorridoInOrden(ArbolBinBusqueda);
 
 	//Copiamos el contenido de la pila al arreglo
-	for(i=0; i<n; i++){
+	//El tope de la pila es el mayor de los numeros, por lo que recorremos el arreglo inversamente
+	for(i=(n-1); i>-1; i--){
 		A[i]=top(stack);
 		stack=pop(stack);
 	}
