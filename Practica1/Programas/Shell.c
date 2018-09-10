@@ -26,35 +26,40 @@
 //Devuelve: Nada, pero ordena el arreglo de menor mayor
 //*****************************************************************
 
-void Shell(int arreglo[], int n){
+void Shell(int arreglo[], int n)
+{
 	double utime0, stime0, wtime0,utime1, stime1, wtime1; //Variables para medición de tiempos
 	uswtime(&utime0, &stime0, &wtime0);
 
-	int k=trunc(n/2);
-	int b=0;
-	int i=0;
-	int temp=0;
+	int k = trunc(n/2);
+	int b = 0;
+	int i = 0;
+	int temp = 0;
 
-	while(k>=1){
-		b=1;
-		while(b!=0){
-			b=0;
-			for(i=k;i<=(n-1);i++){
-				if(arreglo[i-k]>arreglo[i]){
-					temp=arreglo[i];
-					arreglo[i]=arreglo[i-k];
-					arreglo[i-k]=temp;
-					b=b+1;
+	while(k >= 1)
+	{
+		b = 1;
+		while(b != 0)
+		{
+			b = 0;
+			for(i = k;i <= (n-1);i++)
+			{
+				if(arreglo[i-k] > arreglo[i])
+				{
+					temp = arreglo[i];
+					arreglo[i] = arreglo[i-k];
+					arreglo[i-k] = temp;
+					b = b+1;
 				}
 			}
 		}
-		k=trunc(k/2);
+		k = trunc(k/2);
 	}
 
 	uswtime(&utime1, &stime1, &wtime1);
 
 	//Cálculo del tiempo de ejecución del programa
-	printf("\nSeleccion\n");
+	printf("\nShell\n");
 	printf("real (Tiempo total)  %.35f s\n",  wtime1 - wtime0);
 	printf("user (Tiempo de procesamiento en CPU) %.35f s\n",  utime1 - utime0);
 	printf("sys (Tiempo en acciónes de E/S)  %.35f s\n",  stime1 - stime0);
@@ -72,15 +77,16 @@ int main (int argc,char *argv[]){
 	//Creamos arreglo dinámico
 	int n = atoi(argv[1]);
 	int *arreglo = (int*)calloc(n,sizeof(int));
-	int i=0;
 	//Agregamos los n valores del txt al arreglo
-	for(i=0; i<n; i++){
+	for(int i = 0; i < n; i++)
+	{
 		fscanf(stdin, "%d", &arreglo[i]);
 	}
 
 	printf("n = %d\n", n);
 
 	Shell(arreglo,n);
+	printf("------------------------------------\n");
 
 	return 0;
 }

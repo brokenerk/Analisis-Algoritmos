@@ -30,13 +30,13 @@ void Seleccion(int A[], int n)
 	uswtime(&utime0, &stime0, &wtime0);
 
 	int k, p, i, temp;
-	for(k=0; k<n-1; k++)
+	for(k = 0; k < n-1; k++)
 	{
-		p=k;
-		for(i=k+1; i<n; i++)
+		p = k;
+		for(i = k+1; i < n; i++)
 		{
-			if(A[i]<A[p])
-				p=i;
+			if(A[i] < A[p])
+				p = i;
 		}
 		temp = A[p];
 		A[p] = A[k];
@@ -68,7 +68,8 @@ int main(int argc, char *argv[])
 	int *arreglo = (int*)calloc(n,sizeof(int));
 
 	//Con este for vamos agregando los n valores del txt al arreglo
-	for(int i=0; i<n; i++){
+	for(int i = 0; i < n; i++)
+	{
 		fscanf(stdin, "%d", &arreglo[i]);
 	}
 

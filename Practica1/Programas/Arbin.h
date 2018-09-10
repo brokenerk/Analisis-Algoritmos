@@ -8,85 +8,50 @@
 //	***************************************************************
 
 //	***************************************************************
-//			Libreria para construir un Arbol Binario
+//			Librerias
 //	***************************************************************
+
+#include "stdlib.h"
 
 //Defimos la estructura de un arbol binario
-//Consiste en una raiz, un nodo izquierdo y un nodo derecho
-typedef struct NodoA{
-	
+//Consiste en una raiz, un nodo izquierdo y un bodo derecho
+typedef struct NodoA 
+{
+	struct NodoA *izq;
+	struct NodoA *der;
 	int raiz;
-	struct NodoA*izq;
-	struct NodoA*der;
-}*Arbin;
+} NodoA;
 
-
-//	***************************************************************
-//						vacioA
-//	***************************************************************
-//	Descripción: Construye un arbol binario vacio
-//	Recibe: Nada
-//	Devuelve: Un arbol binario vacio
-//	***************************************************************
-
-Arbin vacioA() {return NULL;}
+typedef NodoA *posicion;	// La posición será la dirección hacia un NodoA específico
+typedef posicion Arbin; // El árbol binario será simplemente una posición de un NodoA
 
 //	***************************************************************
 //						consA
 //	***************************************************************
-//	Descripción: Construye un arbol binario con elementos
-//	Recibe: Una raiz, un arbol binario como nodo izquierdo c/elementos, 
-//			un arbol binario como nodo derecho c/elementos
-//	Devuelve: Un Arbol binario c/ elementos construido a partir de las 
-//			  ramificaciones recibidas unidas con la raiz
+//	Descripción: Construye un arbol binario
+//	Recibe: Un apuntador al arbol binario
+//	Devuelve: 
 //	***************************************************************
-
-Arbin consA(int r, Arbin i, Arbin d)
+void consA(Arbin *a)
 {
-	Arbin t = (Arbin)malloc(sizeof(struct NodoA));
-	t -> raiz = r;
-	t -> izq = i;
-	t -> der = d;
-	return t;
+	*a = NULL; // El apuntador enviado por el usuario se coloca en un valor NULL
 }
 
 //	***************************************************************
-//						esvacioA
+//						destruir
 //	***************************************************************
-//	Descripción: Indica si un arbol binario esta vacio
-//	Recibe: Nada
-//	Devuelve: Un entero (0/1) indicando si el arbol esta vacio
+//	Descripción: Elimina de la memoria un arbol binario
+//	Recibe: Un apuntador al arbol binario
+//	Devuelve: 
 //	***************************************************************
-int esvacioA(Arbin a) {return a==NULL;}
-
-//	***************************************************************
-//						raiz
-//	***************************************************************
-//	Descripción: Da el valor de la raiz de un arbol binario
-//	Recibe: Un arbol binario
-//	Devuelve: La raiz del arbol binario
-//	***************************************************************
-int raiz(Arbin a) {return a->raiz;}
-
-//	***************************************************************
-//						izquierdo
-//	***************************************************************
-//	Descripción: La ramificacion izquierda completa de un arbol binario
-//	Recibe: Un arbol binario
-//	Devuelve: La ramificacion izquierda del arbol binario
-//	***************************************************************
-Arbin izquierdo(Arbin a) {return a->izq;}
-
-//	***************************************************************
-//						derecho
-//	***************************************************************
-//	Descripción: La ramificacion derecha completa de un arbol binario
-//	Recibe: Un arbol binario
-//	Devuelve: La ramificacion derecha del arbol binario
-//	***************************************************************
-Arbin derecho(Arbin a) {return a->der;}
-
-
-
-
-
+void destruir(Arbin *a)
+{
+	if (*a != NULL) // Veirficamos no estar apuntando a un valor nulo en el árbol enviado
+	{
+		if ((*a) -> izq != NULL)		// Verificamos si el árbol izquierdo existe, para eliminarlo primero
+			destruir(&((*a) -> izq));	// Llamamos recursivamente la función por el lado izquierdo
+		if ((*a) -> der != NULL)		// Posteriormente eliminamos el lado derecho del árbol verificando que existe
+			destruir(&((*a) -> der)); // Llamamos recursivamente la función por el lado derecho
+		free(*a);									// Liberamos el nodo una vez que ya no tiene hijos
+	}
+}

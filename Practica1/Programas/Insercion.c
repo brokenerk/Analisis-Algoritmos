@@ -30,16 +30,16 @@ void Insercion(int A[], int n)
 	uswtime(&utime0, &stime0, &wtime0);
 
 	int j, i, temp;
-	for(i=0; i<n; i++)
+	for(i = 0; i < n; i++)
 	{
-		j=i;
-		temp=A[i];
+		j = i;
+		temp = A[i];
 		while(j>0 && temp<A[j-1])
 		{
-			A[j]=A[j-1];
+			A[j] = A[j-1];
 			j--;
 		}
-		A[j]=temp;
+		A[j] = temp;
 	}
 	uswtime(&utime1, &stime1, &wtime1);
 
@@ -65,7 +65,8 @@ int main(int argc, char *argv[])
 	int *arreglo = (int*)calloc(n,sizeof(int));
 
 	//Con este for vamos agregando los n valores del txt al arreglo
-	for(int i=0; i<n; i++){
+	for(int i = 0; i < n; i++)
+	{
 		fscanf(stdin, "%d", &arreglo[i]);
 	}
 
