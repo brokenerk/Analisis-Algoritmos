@@ -3,7 +3,7 @@
 	EJERCICIO 1
 */
 	int i, j, tem;
-	for(i = 0; i < n; i++)
+	for(i = 1; i < n; i++)
 	{
 		for(j = 0; j <n-1; j++)
 		{
@@ -12,7 +12,6 @@
 			A[j+1] = temp;
 		}
 	}
-	return 0;
 
 /*
 	EJERCICIO 2
