@@ -37,7 +37,7 @@ void BurbujaOptimizada(int A[], int n)
 	while((i < n-1) && (cambios != FALSE))
 	{
 		cambios = FALSE;
-		for(j=0; j<=(n-2)-i; j++)
+		for(j = 0; j <= (n-2)-i; j++)
 		{
 			if (A[j] > A[j+1])
 			{
@@ -73,7 +73,8 @@ int main(int argc, char *argv[])
 	int *arreglo = (int*)calloc(n,sizeof(int));
 
 	//Con este for vamos agregando los n valores del txt al arreglo
-	for(int i=0; i<n; i++){
+	for(int i = 0; i < n; i++)
+	{
 		fscanf(stdin, "%d", &arreglo[i]);
 	}
 

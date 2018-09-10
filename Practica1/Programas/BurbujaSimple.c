@@ -64,7 +64,8 @@ int main(int argc, char *argv[])
 	int *arreglo = (int*)calloc(n,sizeof(int));
 
 	//Con este for vamos agregando los n valores del txt al arreglo
-	for(int i=0; i<n; i++){
+	for(int i=0; i<n; i++)
+	{
 		fscanf(stdin, "%d", &arreglo[i]);
 	}
 
