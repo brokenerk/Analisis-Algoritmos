@@ -125,16 +125,16 @@ puntos = ListPlot[{{100, 0.0000259876251220703},
 {200000, 123.0501759}}]
 
 g1 = Plot[BSO1, {x, 0, 200000}]
-Show[puntos, g1]
+Show[puntos, g1,  PlotRange->All]
 
 g2 = Plot[BSO2, {x, 0, 200000}]
-Show[puntos, g2]
+Show[puntos, g2,  PlotRange->All]
 
 g3 = Plot[BSO3, {x, 0, 200000}]
-Show[puntos, g3]
+Show[puntos, g3,  PlotRange->All]
 
 g4 = Plot[BSO4, {x, 0, 200000}]
-Show[puntos, g4]
+Show[puntos, g4,  PlotRange->All]
 
 g8 = Plot[BSO8, {x, 0, 200000}]
-Show[puntos, g8]
+Show[puntos, g8,  PlotRange->All]

@@ -66,9 +66,9 @@ void Shell(int arreglo[], int n)
 	printf("CPU/Wall   %.35f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 	printf("\n");
 
-	/* Para imprimir los numeros de arreglo y verificar el algoritmo
+	/*//Para imprimir los numeros de arreglo y verificar el algoritmo
 	for(i=0; i<n; i++){
-		printf("%d ", A[i]);
+		printf("%d, ", arreglo[i]);
 	}*/
 }
 

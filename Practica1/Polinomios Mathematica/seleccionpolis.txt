@@ -125,16 +125,16 @@ puntos = ListPlot[{{100,	0.0000159740447998046},
 {1000000, 1190.107606}}]
 
 g1 = Plot[seleccion1, {x, 0, 2000000}]
-Show[puntos, g1]
+Show[puntos, g1, PlotRange->All]
 
 g2 = Plot[seleccion2, {x, 0, 2000000}]
-Show[puntos, g2]
+Show[puntos, g2, PlotRange->All]
 
 g3 = Plot[seleccion3, {x, 0, 2000000}]
-Show[puntos, g3]
+Show[puntos, g3, PlotRange->All]
 
 g4 = Plot[seleccion4, {x, 0, 2000000}]
-Show[puntos, g4]
+Show[puntos, g4, PlotRange->All]
 
 g8 = Plot[seleccion8, {x, 0, 2000000}]
-Show[puntos, g8]
+Show[puntos, g8, PlotRange->All]

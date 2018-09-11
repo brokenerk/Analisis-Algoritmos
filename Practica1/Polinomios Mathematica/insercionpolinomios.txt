@@ -125,19 +125,19 @@ puntos = ListPlot[{{100, 0.000008106231689453125},
 {2000000, 2643.314136}}]
 
 g1 = Plot[Insercion1, {x, 0, 2000000}]
-Show[puntos, g1]
+Show[puntos, g1,  PlotRange->All]
 
 g2 = Plot[Insercion2, {x, 0, 2000000}]
-Show[puntos, g2]
+Show[puntos, g2 ,  PlotRange->All]
 
 g3 = Plot[Insercion3, {x, 0, 2000000}]
-Show[puntos, g3]
+Show[puntos, g3 ,  PlotRange->All]
 
 g4 = Plot[Insercion4, {x, 0, 2000000}]
-Show[puntos, g4]
+Show[puntos, g4 ,  PlotRange->All]
 
 g8 = Plot[Insercion8, {x, 0, 2000000}]
-Show[puntos, g8]
+Show[puntos, g8 ,  PlotRange->All]
 
 
 

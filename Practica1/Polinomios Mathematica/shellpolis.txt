@@ -125,17 +125,17 @@ puntos = ListPlot[{{100, 0.0000109672546386718},
 {10000000, 26.47416902}}]
 
 g1 = Plot[shell1, {x, 0, 10000000}]
-Show[puntos, g1]
+Show[puntos, g1 , PlotRange->All]
 
 g2 = Plot[shell2, {x, 0, 10000000}]
-Show[puntos, g2]
+Show[puntos, g2 , PlotRange->All]
 
 g3 = Plot[shell3, {x, 0, 10000000}]
-Show[puntos, g3]
+Show[puntos, g3 , PlotRange->All]
 
 g4 = Plot[shell4, {x, 0, 10000000}]
-Show[puntos, g4]
+Show[puntos, g4 , PlotRange->All]
 
 g8 = Plot[shell8, {x, 0, 10000000}]
-Show[puntos, g8]
+Show[puntos, g8 , PlotRange->All]
 

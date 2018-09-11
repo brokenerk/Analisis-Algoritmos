@@ -125,18 +125,18 @@ puntos = ListPlot[{{100, 0.0000379085540771484375},
 					{200000, 125.895797}}]
 
 g1 = Plot[burbujaSimple1, {x, 0, 200000}]
-Show[puntos, g1]
+Show[puntos, g1,  PlotRange->All]
 
 g2 = Plot[burbujaSimple2, {x, 0, 200000}]
-Show[puntos, g2]
+Show[puntos, g2,  PlotRange->All]
 
 g3 = Plot[burbujaSimple3, {x, 0, 200000}]
-Show[puntos, g3]
+Show[puntos, g3,  PlotRange->All]
 
 g4 = Plot[burbujaSimple4, {x, 0, 200000}]
-Show[puntos, g4]
+Show[puntos, g4,  PlotRange->All]
 
 g8 = Plot[burbujaSimple8, {x, 0, 200000}]
-Show[puntos, g8]
+Show[puntos, g8,  PlotRange->All]
 
 

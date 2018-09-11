@@ -101,16 +101,16 @@ void OrdenaConArbolBinario(int A[], int n)
 	uswtime(&utime1, &stime1, &wtime1);
 
 	//Cálculo del tiempo de ejecución del programa
-	printf("\nDiccionario Binario\n");
+	printf("\nArbol de Busqueda Binario\n");
 	printf("real (Tiempo total)  %.35f s\n",  wtime1 - wtime0);
 	printf("user (Tiempo de procesamiento en CPU) %.35f s\n",  utime1 - utime0);
 	printf("sys (Tiempo en acciónes de E/S)  %.35f s\n",  stime1 - stime0);
 	printf("CPU/Wall   %.35f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 	printf("\n");
 
-	/*Para imprimir los numeros de arreglo y verificar el algoritmo
+	/*//Para imprimir los numeros de arreglo y verificar el algoritmo
 	for(i=0; i<n; i++){
-		printf("%d \n", A[i]);
+		printf("%d, ", A[i]);
 	}*/
 }
 
