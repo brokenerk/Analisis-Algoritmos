@@ -18,6 +18,5 @@ int main()
 		}	
 		printf(" Contador: %d\n", contador);
 	}
-	
 	return 0;
 }
