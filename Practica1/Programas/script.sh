@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+#Para ejecutar el script e iniciar las pruebas: sh script.sh
 gcc tiempo.c -c
 gcc BurbujaSimple.c tiempo.o -o BurbujaSimple
 ./BurbujaSimple 100 <numeros10millones.txt >>salida.txt
