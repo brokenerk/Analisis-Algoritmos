@@ -1,11 +1,15 @@
 //*****************************************************************
 //AUTORES:
 // Nicolas Sayago Abigail
+//	Parra Garcilazo Cinthya Dolores
 // Ramos Diaz Enrique
 //
 //Practica 1: Analisis de algoritmos de ordenamiento numerico
-//Compilación: "gcc PInsercion.c -o Insercion
-//Ejecución: "./Insercion.out" (Linux)
+//Compilación:
+//	gcc tiempo.c -c
+//	gcc Insercion.c tiempo.o -o Insercion
+//
+//Ejecución: "./Insercion" (Linux)
 //*****************************************************************
 
 //*****************************************************************

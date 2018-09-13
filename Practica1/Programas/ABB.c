@@ -1,11 +1,15 @@
 //*****************************************************************
 //	AUTORES:
 // 	Nicolas Sayago Abigail
+//	Parra Garcilazo Cinthya Dolores
 // 	Ramos Diaz Enrique
 // ****************************************************************
 //	Practica 1: Analisis de algoritmos de ordenamiento numerico
-//	Compilación: "gcc ABB.c -o ABB
-//	Ejecución: "./ABB.out" (Linux)
+//	Compilación:
+//	gcc tiempo.c -c
+//	gcc ABB.c tiempo.o -o ABB
+//
+//	Ejecución: "./ABB" (Linux)
 //	***************************************************************
 
 //	***************************************************************

@@ -2,6 +2,7 @@
 //*****************************************************************
 //	AUTORES:
 // 	Nicolas Sayago Abigail
+//	Parra Garcilazo Cinthya Dolores
 // 	Ramos Diaz Enrique
 // ****************************************************************
 //	Practica 1: Analisis de algoritmos de ordenamiento numerico

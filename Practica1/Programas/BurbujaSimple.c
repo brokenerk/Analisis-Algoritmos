@@ -1,11 +1,15 @@
 //*****************************************************************
 //	AUTORES:
 // 	Nicolas Sayago Abigail
+//	Parra Garcilazo Cinthya Dolores
 // 	Ramos Diaz Enrique
 // ****************************************************************
 //	Practica 1: Analisis de algoritmos de ordenamiento numerico
-//	Compilación: "gcc BurbujaSimple.c -o BurbujaSimple
-//	Ejecución: "./BurbujaSimple.out" (Linux)
+//	Compilación: 
+//	gcc tiempo.c -c
+//	gcc BurbujaSimple.c tiempo.o -o BurbujaSimple
+//
+//	Ejecución: "./BurbujaSimple" (Linux)
 //	***************************************************************
 
 //	***************************************************************
