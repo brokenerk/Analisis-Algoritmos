@@ -4,7 +4,7 @@
 //ESCUELA SUPERIOR DE CÓMPUTO - IPN
 //(C) Marzo 2013
 //Ejemplo del empleo de Threads
-//Compilación: ""gcc -lm -lpthread -o ejemplo_thread ejemplo_thread.c"
+//Compilación: "gcc -lm ejemplo_thread.c -lpthread -o ejemplo_thread"
 //Ejecución: "./ejemplo_thread 4"
 //*****************************************************************
 
@@ -50,9 +50,15 @@ void* procesar(void* id)
 		fin=((n_thread+1)*N)/NumThreads-1;
 
 	printf("\nHola desde procesar\tSoy el thread %d\tInicio %d\tTermino %d",n_thread,inicio,fin);
+	//*****************************************************************************
+	//Implementacion del algoritmo
+	//*****************************************************************************
 	for(i=inicio;i<=fin;i++)
+	{
 		a=i*i;		
-		//printf("\nProcesando dato %d",i);
+		printf("\nProcesando dato %d",i);	
+	}
+		
 
 	printf("\nBye desde procesar\tSoy el thread %d\tHe terminado",n_thread);
 
@@ -76,45 +82,14 @@ int main (int argc, char *argv[])
 	//Obtener el número de threads a usar y el arreglo para la identificacion de los mismos
 	//********************************************************************************
 	pthread_t *thread;
-	if (argc<2) 
-	{
-		printf("Indique el número de threads - \tEjemplo: [user@equipo]$ %s 4\n\n",argv[0]);
-		exit(-1);
-	}  
 	NumThreads=atoi(argv[1]);
 	thread = malloc(NumThreads*sizeof(pthread_t));
 
 	//***************************************************************************************************************************
 	//Saber cuál es el tamaño del problema N
 	//***************************************************************************************************************************	
-	//Si no se introduce correctamente N
-	if (argc!=3) 
-	{
-		printf("\nIndique el tamaño de N - \nEjemplo: [user@equipo]$ %s %s 1000\n",argv[0],argv[1]);
-		exit(-1);
-	}
 	N=atoi(argv[2]);
 
-
-	//***************************************************************************************************************************
-	//1 Saludar desde cada hilo "saludar"
-	//***************************************************************************************************************************
-	//Crear los threads con el comportamiento "segmentar"
-	for (i=1; i<NumThreads; i++) 
-	{
-		if (pthread_create (&thread[i], NULL, saludar,(void*)i) != 0 ) 
-		{
-			perror("El thread no  pudo crearse");
-			exit(-1);
-		}
-	}
-	
-	//El main ejecuta el thread 0
-	saludar(0);
-	
-	//Esperar a que terminen los threads (Saludar)
-	for (i=1; i<NumThreads; i++) pthread_join (thread[i], NULL);
-				
 	//***************************************************************************************************************************
 	//2 Procesar desde cada hilo "procesar"
 	//***************************************************************************************************************************
@@ -132,7 +107,8 @@ int main (int argc, char *argv[])
 	procesar(0);
 	
 	//Esperar a que terminen los threads (Saludar)
-	for (i=1; i<NumThreads; i++) pthread_join (thread[i], NULL);
+	for (i=1; i<NumThreads; i++) 
+		pthread_join (thread[i], NULL);
 
 	//******************************************************************	
 	//Evaluar los tiempos de ejecución 

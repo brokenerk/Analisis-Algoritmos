@@ -35,7 +35,7 @@ int Binaria(int A[], int n, int dato)
 	int centro, inf = 0, sup = n-1;
 	while(inf <= sup)
 	{
-		centro = ((sup - inf)/2) + inf;
+		centro = ((sup + inf)/2);
 		if(A[centro] == dato)
 		{
 			/*Para imprimir la posicion y el dato dentro del arreglo
@@ -64,8 +64,7 @@ int main(int argc, char *argv[])
 	//Con este for vamos agregando los n valores del txt al arreglo
 	for(i = 0; i < n; i++)
 		fscanf(stdin, "%d", &arreglo[i]);
-
-	printf("n = %d\n\n", n);
+	printf("\nBusqueda Binaria n = %d\n\n", n);
 	//Con este for vamos buscando cada numero en el arreglo
 	for(j = 0; j < 20; j++)
 	{
@@ -77,21 +76,19 @@ int main(int argc, char *argv[])
 		uswtime(&utime1, &stime1, &wtime1);
 
 		if(s != -1)
-			printf("\nSI %d : %d\n", datos[j], s);
+			printf("\n%d SI : %d ", datos[j], s);
 		else
-			printf("\nNO %d\n", datos[j]);
+			printf("\n%d NO : --- ", datos[j]);
 
 		//Cálculo del tiempo de ejecución del programa
-		printf("\nBusqueda Binaria\n");
-		printf("real (Tiempo total)  %.35f s\n",  wtime1 - wtime0);
+		
+		printf("%.25f ",  wtime1 - wtime0); //Tiempo Real
 		suma = suma + wtime1 - wtime0;
-		printf("user (Tiempo de procesamiento en CPU) %.35f s\n",  utime1 - utime0);
-		printf("sys (Tiempo en acciónes de E/S)  %.35f s\n",  stime1 - stime0);
-		printf("CPU/Wall   %.35f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
-		printf("\n");
-
+		printf("%.25f ",  utime1 - utime0); //Tiempo CPU
+		printf("%.25f ",  stime1 - stime0); //Tiempo E/S
+		printf("%.8f %% ",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0)); //CPU Wall
 	}
-	printf("\n\nPromedio Tiempo Total: %.35f s\n", suma/20);
+	printf("\nPromedio Tiempo Total: %.20f s\n\n", suma/20);
 	
 	printf("------------------------------------\n");
 }
