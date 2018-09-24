@@ -25,7 +25,7 @@
 //*****************************************************************
 //Descripción: Función que implementa el algoritmo de busqueda Binaria
 //Recibe: Un arreglo de enteros, el tamaño del arreglo y un entero a buscar
-//Devuelve: un booleando que indica si se encontro o no el entero a buscar
+//Devuelve: -1 si no encontro el dato, o la posicion en el arreglo del dato
 //*****************************************************************
 int Binaria(int A[], int n, int dato)
 {
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	int n = atoi(argv[1]), i = 0, j = 0;
 	float suma = 0, promedio = 0;
 	int *arreglo = (int*)calloc(n,sizeof(int));
-	int datos[20] = { 322486, 14700764, 3128036, 6337399, 61396,
+	int datos[20] = {322486, 14700764, 3128036, 6337399, 61396,
 	10393545, 2147445644, 1295390003, 450057883, 187645041,
 	1980098116, 152503, 5000, 1493283650, 214826, 1843349527,
 	1360839354, 2109248666 , 2147470852, 0};
