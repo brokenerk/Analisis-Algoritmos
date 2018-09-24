@@ -21,7 +21,7 @@
 #include "tiempo.h"
 
 //*****************************************************************
-//Insercion
+//Binaria
 //*****************************************************************
 //Descripción: Función que implementa el algoritmo de busqueda Binaria
 //Recibe: Un arreglo de enteros, el tamaño del arreglo y un entero a buscar
@@ -76,20 +76,21 @@ int main(int argc, char *argv[])
 		uswtime(&utime1, &stime1, &wtime1);
 
 		if(s != -1)
-			printf("\n%d SI : %d ", datos[j], s);
+			printf("\n\n%d SI : %d ", datos[j], s);
 		else
-			printf("\n%d NO : --- ", datos[j]);
+			printf("\n\n%d NO : --- ", datos[j]);
 
 		//Cálculo del tiempo de ejecución del programa
 		
-		printf("%.25f ",  wtime1 - wtime0); //Tiempo Real
+		printf("%.35f ",  wtime1 - wtime0); //Tiempo Real
 		suma = suma + wtime1 - wtime0;
-		printf("%.25f ",  utime1 - utime0); //Tiempo CPU
-		printf("%.25f ",  stime1 - stime0); //Tiempo E/S
+		printf("%.35f ",  utime1 - utime0); //Tiempo CPU
+		printf("%.35f ",  stime1 - stime0); //Tiempo E/S
 		printf("%.8f %% ",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0)); //CPU Wall
 	}
 	printf("\nPromedio Tiempo Total: %.20f s\n\n", suma/20);
 	
 	printf("------------------------------------\n");
+	exit(0);
 }
 
