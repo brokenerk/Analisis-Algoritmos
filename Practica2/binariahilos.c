@@ -6,8 +6,8 @@
 //
 //Practica 2: Análisis temporal y notación de orden (Algoritmos de búsqueda)
 //Compilación:
-//Compilación: "gcc -lm binariahilos.c tiempo.o -lpthread -o binariahilos"
-//Ejecución: "./binariahilos 4 100"
+//Compilación: "gcc -lm BinariaHilos.c tiempo.o -lpthread -o BinariaHilos"
+//Ejecución: "./BinariaHilos 4 100"
 //*****************************************************************
 
 //*****************************************************************
@@ -126,20 +126,24 @@ int main (int argc, char *argv[])
 		//******************************************************************
 		uswtime(&utime1, &stime1, &wtime1);
 
-		if(encontrado != -1)
-			printf("\n%d SI : %d ", datos[indice], s);
-		else
-			printf("\n%d NO : --- ", datos[indice]);
-
 		//Cálculo del tiempo de ejecución del programa
-		printf("\n");
-		printf("Total  %.10f\n",  wtime1 - wtime0);
+		if(indice == 17)// para 2109248666
+		{
+			if(encontrado != -1)
+				printf("\n%d SI : %d ", datos[indice], s);
+			else
+				printf("\n%d NO : --- ", datos[indice]);
+
+			printf("\n");
+			printf("Total  %.20f\n",  wtime1 - wtime0);
+			printf("CPU's %.20f\n",  utime1 - utime0);
+			printf("Hilos %.20f\n", (utime1 - utime0)/NumThreads);	
+			printf("E/S %.20f\n",  stime1 - stime0);
+			printf("CPU/Wall %.8f %%\n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
+			printf("\n");
+		}
 		suma = suma + wtime1 - wtime0;
-		printf("CPU's %.10f\n",  utime1 - utime0);
-		printf("Hilos %.10f\n", (utime1 - utime0)/NumThreads);	
-		printf("E/S %.10f\n",  stime1 - stime0);
-		printf("CPU/Wall %.10f %%\n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
-		printf("\n");
+
 		//******************************************************************
 	}
 	printf("\nPromedio Tiempo Total: %.20f s\n\n", suma/20);

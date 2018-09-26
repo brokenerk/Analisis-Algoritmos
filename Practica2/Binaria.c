@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 	//Con este for vamos agregando los n valores del txt al arreglo
 	for(i = 0; i < n; i++)
 		fscanf(stdin, "%d", &arreglo[i]);
-	printf("\nBusqueda Binaria n = %d\n\n", n);
+	printf("\nBusqueda Binaria n = %d", n);
 	//Con este for vamos buscando cada numero en el arreglo
 	for(j = 0; j < 20; j++)
 	{
@@ -75,18 +75,22 @@ int main(int argc, char *argv[])
 
 		uswtime(&utime1, &stime1, &wtime1);
 
-		if(s != -1)
-			printf("\n\n%d SI : %d ", datos[j], s);
-		else
-			printf("\n\n%d NO : --- ", datos[j]);
+		if(j == 17)// para 2109248666
+		{
+			if(s != -1)
+				printf("\n\n%d SI : %d ", datos[j], s);
+			else
+				printf("\n\n%d NO : --- ", datos[j]);
 
-		//Cálculo del tiempo de ejecución del programa
-		
-		printf("%.35f ",  wtime1 - wtime0); //Tiempo Real
+			//Cálculo del tiempo de ejecución del programa
+			printf("\n");
+			printf("Total %.35f \n",  wtime1 - wtime0); //Tiempo Real
+			printf("CPU %.35f \n",  utime1 - utime0); //Tiempo CPU
+			printf("E/S %.35f \n",  stime1 - stime0); //Tiempo E/S
+			printf("CPU/Wall %.8f %% ",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0)); //CPU Wall
+			printf("\n");
+		}
 		suma = suma + wtime1 - wtime0;
-		printf("%.35f ",  utime1 - utime0); //Tiempo CPU
-		printf("%.35f ",  stime1 - stime0); //Tiempo E/S
-		printf("%.8f %% ",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0)); //CPU Wall
 	}
 	printf("\nPromedio Tiempo Total: %.20f s\n\n", suma/20);
 	
