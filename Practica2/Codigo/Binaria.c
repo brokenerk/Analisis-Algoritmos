@@ -9,7 +9,7 @@
 //	gcc tiempo.c -c
 //	gcc Binaria.c tiempo.o -o Binaria
 //
-//Ejecución: "./Binaria" (Linux)
+//Ejecución: "./Binaria 10000000 <ordenados.txt" (Linux)
 //*****************************************************************
 
 //*****************************************************************

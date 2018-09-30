@@ -9,7 +9,7 @@
 //	gcc tiempo.c -c
 //	gcc ABB.c tiempo.o -o ABB
 //
-//	Ejecución: "./ABB" (Linux)
+//	Ejecución: "./ABB 10000000 <desordenados.txt" (Linux)
 //	***************************************************************
 
 //	***************************************************************
@@ -47,8 +47,8 @@ void Insertar(Arbin *a, int e)
 //						ABB
 //	***************************************************************
 //	Descripción: Busca si existe un elemento en el arbol
-//	Recibe: Un arbol binario, tamaño del arreglo y el elemento a buscar
-//	Devuelve: -1 si existe el elemento, 0 si no existe
+//	Recibe: Un arbol binario y el elemento a buscar
+//	Devuelve: 0 si existe el elemento, -1 si no existe
 //	***************************************************************
 
 int ABB(Arbin *a, int elemento)

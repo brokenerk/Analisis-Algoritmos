@@ -9,7 +9,7 @@
 //	gcc tiempo.c -c
 //	gcc Lineal.c tiempo.o -o Lineal
 //
-//Ejecución: "./Lineal" (Linux)
+//Ejecución: "./Lineal 10000000 <ordenados.txt" (Linux)
 //*****************************************************************
 
 //*****************************************************************

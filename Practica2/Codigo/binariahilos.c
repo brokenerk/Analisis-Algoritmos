@@ -6,8 +6,9 @@
 //
 //Practica 2: Análisis temporal y notación de orden (Algoritmos de búsqueda)
 //Compilación:
-//Compilación: "gcc -lm BinariaHilos.c tiempo.o -lpthread -o BinariaHilos"
-//Ejecución: "./BinariaHilos 4 100"
+//	gcc tiempo.c -c
+//	gcc -lm BinariaHilos.c tiempo.o -lpthread -o BinariaHilos
+//Ejecución: "./BinariaHilos 4 10000000 <ordenados.txt"
 //*****************************************************************
 
 //*****************************************************************
@@ -22,11 +23,13 @@
 //VARIABLES GLOBALES
 //*****************************************************************
 int NumThreads, N, indice = 0, encontrado = -1, s = 0;
-int *arreglo;
+//Variables del tamaño de problema, numeros de hilos, y auxiliares para
+//recorrer nuestro arreglo de numeros a buscar
+int *arreglo;//Arreglo de los numeros de entrada del TXT
 int datos[20] = {322486, 14700764, 3128036, 6337399, 61396,
 10393545, 2147445644, 1295390003, 450057883, 187645041,
 1980098116, 152503, 5000, 1493283650, 214826, 1843349527,
-1360839354, 2109248666 , 2147470852, 0};
+1360839354, 2109248666 , 2147470852, 0};//Arreglo de numeros a buscar
 
 //*****************************************************************
 //BinariaHilos
@@ -137,7 +140,7 @@ int main (int argc, char *argv[])
 			printf("\n");
 			printf("Total  %.20f\n",  wtime1 - wtime0);
 			printf("CPU's %.20f\n",  utime1 - utime0);
-			printf("Hilos %.20f\n", (utime1 - utime0)/NumThreads);	
+			printf("Hilo %.20f\n", (utime1 - utime0)/NumThreads);	
 			printf("E/S %.20f\n",  stime1 - stime0);
 			printf("CPU/Wall %.8f %%\n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 			printf("\n");

@@ -6,8 +6,9 @@
 //
 //Practica 2: Análisis temporal y notación de orden (Algoritmos de búsqueda)
 //Compilación:
-//Compilación: "gcc -lm LinealHilos.c tiempo.o -lpthread -o LinealHilos"
-//Ejecución: "./LinealHilos 4 100"
+//	gcc tiempo.c -c
+//	gcc -lm LinealHilos.c tiempo.o -lpthread -o LinealHilos
+//Ejecución: "./LinealHilos 4 10000000 <ordenados.txt"
 //*****************************************************************
 
 //*****************************************************************
@@ -22,11 +23,13 @@
 //VARIABLES GLOBALES
 //*****************************************************************
 int NumThreads, N, indice = 0, encontrado = -1, s = 0;
-int *arreglo;
+//Variables del tamaño de problema, numeros de hilos, y auxiliares para
+//recorrer nuestro arreglo de numeros a buscar
+int *arreglo;//Arreglo de los numeros de entrada del TXT
 int datos[20] = {322486, 14700764, 3128036, 6337399, 61396,
 10393545, 2147445644, 1295390003, 450057883, 187645041,
 1980098116, 152503, 5000, 1493283650, 214826, 1843349527,
-1360839354, 2109248666 , 2147470852, 0};
+1360839354, 2109248666 , 2147470852, 0};//Arreglo de numeros a buscar
 
 //*****************************************************************
 //LinealHilos
@@ -41,13 +44,15 @@ void* LinealHilos(void* id)
 	int n_thread=(int)id, inicio, fin;
 
 	//Revisar la parte de los datos a procesar	
-	
 	inicio=(n_thread*N)/NumThreads;
 	if(n_thread==NumThreads-1)	
 		fin=N-1;
 	else
 		fin=((n_thread+1)*N)/NumThreads-1;
 
+	//***************************************************************
+	//Implementacion del algoritmo Busqueda lineal
+	//***************************************************************
 	int posicion = inicio;
 	if(datos[indice] > arreglo[inicio])
 		while(posicion <= fin)

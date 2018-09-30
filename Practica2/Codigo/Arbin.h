@@ -5,7 +5,7 @@
 //	Parra Garcilazo Cinthya Dolores
 // 	Ramos Diaz Enrique
 // ****************************************************************
-//	Practica 1: Analisis de algoritmos de ordenamiento numerico
+//	Practica 2: Análisis temporal y notación de orden (Algoritmos de búsqueda)
 //	***************************************************************
 
 //	***************************************************************
