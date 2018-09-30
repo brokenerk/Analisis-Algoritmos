@@ -36,7 +36,7 @@ int datos[20] = {322486, 14700764, 3128036, 6337399, 61396,
 //Recibe: Un indice de tipo void que indica el numero de hilo
 //Devuelve: Nada
 //*****************************************************************
-void* Lineal(void* id)
+void* LinealHilos(void* id)
 {
 	int n_thread=(int)id, inicio, fin;
 
@@ -49,11 +49,11 @@ void* Lineal(void* id)
 		fin=((n_thread+1)*N)/NumThreads-1;
 
 	int posicion = inicio;
-	if(dato>A[inicio])
-		while(posicion =< fin)
+	if(datos[indice] > arreglo[inicio])
+		while(posicion <= fin)
 		{
-			if(dato == A[posicion])
-				encontrado =1;
+			if(datos[indice] == arreglo[posicion])
+				encontrado = 1;
 			posicion++;
 		}
 }
