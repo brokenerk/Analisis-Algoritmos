@@ -73,9 +73,9 @@ int main(int argc, char *argv[])
 
 			//Cálculo del tiempo de ejecución del programa
 			printf("\n");
-			printf("Total %.35f \n",  wtime1 - wtime0); //Tiempo Real
-			printf("CPU %.35f \n",  utime1 - utime0); //Tiempo CPU
-			printf("E/S %.35f \n",  stime1 - stime0); //Tiempo E/S
+			printf("Total %.15e \n",  wtime1 - wtime0); //Tiempo Real
+			printf("CPU %.15e \n",  utime1 - utime0); //Tiempo CPU
+			printf("E/S %.15e \n",  stime1 - stime0); //Tiempo E/S
 			printf("CPU/Wall %.8f %% ",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0)); //CPU Wall
 			printf("\n");
 		}

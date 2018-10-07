@@ -131,10 +131,10 @@ int main (int argc, char *argv[])
 				printf("\n%d NO : --- ", datos[indice]);
 
 			printf("\n");
-			printf("Total  %.20f\n",  wtime1 - wtime0);
-			printf("CPU's %.20f\n",  utime1 - utime0);
-			printf("Hilos %.20f\n", (utime1 - utime0)/NumThreads);	
-			printf("E/S %.20f\n",  stime1 - stime0);
+			printf("Total  %.15e\n",  wtime1 - wtime0);
+			printf("CPU's %.15e\n",  utime1 - utime0);
+			printf("Hilos %.15e\n", (utime1 - utime0)/NumThreads);	
+			printf("E/S %.15e\n",  stime1 - stime0);
 			printf("CPU/Wall %.8f %%\n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 			printf("\n");
 		}
