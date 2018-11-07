@@ -213,7 +213,7 @@ backgroundcolor=\color{gray75},
 				\vfill
 				
 				% Bottom of the page
-				{\large 3 de Octubre 2018}
+				{\large 10 de Octubre 2018}
 			\end{center}
 		\end{titlepage}
 	
@@ -223,6 +223,11 @@ backgroundcolor=\color{gray75},
 	%			PLANTEAMIENTO DEL PROBLEMA
 	% ////////////////////////////////////////////////////////
 	\section{Planteamiento del problema}
+	Existen diversos métodos de búsqueda numérica, en este documento se analizaran 3, se observará y comparará el comportamiento de cada uno, para determinar el mejor de todos.
+    
+    Se tomaran resultados experimentales en una plataforma determinada para determinar la complejidad temporal y su orden de complejidad (cota O mayúscula) de los siguientes algoritmos: Búsqueda Lineal, Búsqueda Binaria y Árbol de Búsqueda Binario.
+    
+    Además, se analizará la efectividad y velocidad de la implementación de éstos algoritmos con ejecución de hilos simultáneos, para determinar si vale o no la pena al momento de ahorrar recursos de nuestra computadora para tamaños de problema muy grandes.
 
 	
 	% /////////////////////////////////////////////////////////
@@ -251,32 +256,90 @@ backgroundcolor=\color{gray75},
 		% ----------------------------------------------------
 	    \subsection{Búsqueda Lineal}
 	        \subsubsection{Análisis teórico a priori}
+	        \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/cotas/lineal_analisis.PNG}
+			    \end{figure}
 	        
 	        \subsubsection{Ejecución del algoritmo}
             	\begin{figure}[H]
                 	   \centering
-                	   \includegraphics[width=0.8\textwidth]{images/pruebas/lineal.png}
+                	   \includegraphics[width=0.9\textwidth]{images/pruebas/lineal.png}
                 \end{figure}
 	        
 	        \subsubsection{Análisis temporal promedio}
             	\begin{figure}[H]
             	    \centering
-                	   \includegraphics[width=0.8\textwidth]{images/tablas/Lineal.JPG}
+                	   \includegraphics[width=0.95\textwidth]{images/tablas/Lineal.JPG}
                 \end{figure}
         	
         	\subsubsection{Gráfica de comportamiento}
             	\begin{figure}[H]
             	    \centering
-                	   \includegraphics[width=0.8\textwidth]{images/graficas/LinealGrafica.JPG}
+                	   \includegraphics[width=0.9\textwidth]{images/graficas/lineal.PNG}
                 \end{figure}
     
         	\subsubsection{Aproximación Polinomial}
-    
+        	\begin{figure}[H]
+    			  \centering
+    			 \includegraphics[width=0.85\textwidth]{images/polinomios/lineal.PNG}
+    			    	   \caption*{\textbf{Grado 1: $0.000236308 + 1.75588\times10^{-9} x$}}
+    			  \end{figure}
+
         	\subsubsection{Tiempo por cada operación básica}
+        	Tomamos la función de complejidad temporal del peor caso. \textcolor{blue}{ Peor Caso $f_{tpc}(n) = n+1$}
+    			
+    			Luego, tomamos el polinomio obtenido en la aproximación polinomial en función de n: 
+    			
+    			$P(n) = 0.000236308 + 1.75588\times10^{-9} x$
+    			
+    			Utilizaremos un tamaño de problema n = 10000000 para el cálculo.
+    			
+    			Calculamos el número de operaciones para un tamaño de problema n con la función de complejidad temporal del peor caso:
+    			
+    			$$f_{tpc}(10000000) = 10000000+1 = 10000001~operaciones$$
+    			
+    			Ahora, calculamos el tiempo en segundos con el polinomio:
+    			
+    			$$P(10000000) = 0.0177951~segundos$$
+    			
+    			El tiempo en que tarda cada operación básica es:
+    			
+    			$$Tiempo~x~op.~básica = \frac{0.0177951}{10000001} =1.7795\times10^{-9}~segundos$$
     
         	\subsubsection{Evaluación de tamaños de problema n's}
+        	Para n = 50000000
+    			
+                $P(50000000) = 0.0880303~ segundos$
     
-    		\subsubsection{Cotas O mayúscula}
+    			Para n = 100000000
+    			
+    			$P(100000000) = 0.175824~ segundos$
+    			
+    			Para n = 500000000
+    			
+    			$P(500000000) = 0.878176~ segundos$
+    			
+    			Para n = 1000000000
+    			
+    			$P(1000000000) = 1.75612~ segundos$
+    			
+    			Para n = 5000000000
+    			
+    			$P(5000000000) = 8.77964~ segundos$
+    
+    		\subsubsection{Cota O mayúscula del algoritmo}
+
+			\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/cotas/Lineal.PNG}
+			    \end{figure}
+			    
+			    \subsubsection{Cota O mayúscula del polinomio}
+			    Al tratarse de un polinomio de grado 1, su cota de complejidad O sera $O(n)$.
+			    
+
+    		  
 	
 \newpage
 
@@ -287,6 +350,7 @@ backgroundcolor=\color{gray75},
 		\subsection{Búsqueda Lineal (Hilos)}
 			
 			\subsubsection{Funcionamiento}
+			Según la cantidad n de hilos que se envíen como parámetro al ejecutar el programa, estos dividirán el arreglo en n partes. En cada una de ellas se ejecutará de manera simultanea el algoritmo de búsqueda lineal indicado anteriormente; va buscando posición por posición el número en el pedazo del arreglo. Con ayuda del número de hilos podemos establecer los rangos, con un índice (posición del arreglo) de inicio y otro de fin, que le corresponderán a cada hilo en su ejecución.
 			
 			\subsubsection{Ejecución del algoritmo}
 				\begin{figure}[H]
@@ -297,22 +361,46 @@ backgroundcolor=\color{gray75},
 			\subsubsection{Análisis temporal promedio}
 				\begin{figure}[H]
 				    \centering
-			    	   \includegraphics[width=0.8\textwidth]{images/tablas/LinealHilos.JPG}
+			    	   \includegraphics[width=0.95\textwidth]{images/tablas/LinealHilos.JPG}
 			    \end{figure}
 			
 			\subsubsection{Gráfica de comportamiento}
 				\begin{figure}[H]
 				    \centering
-			    	   \includegraphics[width=0.8\textwidth]{images/graficas/LinealHilosGrafica.JPG}
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/LinealHilosGrafica.JPG}
 			    \end{figure}
 			
 			\subsubsection{Aproximación Polinomial}
+			\begin{figure}[H]
+    			  \centering
+    			 \includegraphics[width=0.85\textwidth]{images/polinomios/linealhilos.PNG}
+    			    	   \caption*{\textbf{Grado 1: $0.0000858628 + 1.46546*10^{-9} x$}}
+    			  \end{figure}
 			
-			\subsubsection{Tiempo por cada operación básica}
-			
+			\newpage
 			\subsubsection{Evaluación de tamaños de problema n's}
+			Para n = 50000000
+    			
+                $P(50000000) = 0.0733589~ segundos$
+    
+    			Para n = 100000000
+    			
+    			$P(100000000) = 0.146632~ segundos$
+    			
+    			Para n = 500000000
+    			
+    			$P(500000000) = 0.732816~ segundos$
+    			
+    			Para n = 1000000000
+    			
+    			$P(1000000000) = 1.46555~ segundos$
+    			
+    			Para n = 5000000000
+    			
+    			$P(5000000000) = 7.32739~ segundos$
 			
-			\subsubsection{Cotas O mayúscula}
+		\subsubsection{Cotas O mayúscula del polinomio}
+		Al tratarse de un polinomio de grado 1, su cota de complejidad O sera $O(n)$.
 			
 \newpage
 
@@ -323,38 +411,87 @@ backgroundcolor=\color{gray75},
 		\subsection{Búsqueda Binaria}
 			
 			\subsubsection{Análisis teórico a priori}
+			\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/cotas/binaria_analisis.PNG}
+			    \end{figure}
 			
 			\subsubsection{Ejecución del algoritmo}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[width=0.8\textwidth]{images/pruebas/binaria.png}
+			    	   \includegraphics[width=0.9\textwidth]{images/pruebas/binaria.png}
 			    \end{figure}
 			
 			\subsubsection{Análisis temporal promedio}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[scale=0.75]{images/tablas/binaria.PNG}
+			    	   \includegraphics[width=0.95\textwidth]{images/tablas/binaria.PNG}
 			    \end{figure}
 			
 			\subsubsection{Gráfica de comportamiento}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[scale=0.8]{images/graficas/binaria.PNG}
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/binaria.PNG}
 			    \end{figure}
 			
 			\subsubsection{Aproximación Polinomial}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[width=0.75\textwidth]{images/polinomios/binaria.PNG}
+			    	   \includegraphics[width=0.85\textwidth]{images/polinomios/binaria.PNG}
 			    	   \caption*{\textbf{Grado 5: $7.20374\times10^{-7} + 2.42704\times10^{-13} x - 6.58073\times10^{-20} x^2 + 
 			            1.16759\times10^{-26} x^3 - 1.10283\times10^{-33} x^4 + 4.15462\times10^{-41} x^5$}}
 			    \end{figure}
 			
 			\subsubsection{Tiempo por cada operación básica}
-			
-			\subsubsection{Evaluación de tamaños de problema n's}
-			
-			\subsubsection{Cotas O mayúscula}
+    			Tomamos la función de complejidad temporal del peor caso. \textcolor{blue}{ Peor Caso $f_{tpc}(n) = 5log_2n$}
+    			
+    			Luego, tomamos el polinomio obtenido en la aproximación polinomial en función de n: $P(n) = 7.20374\times10^{-7} + 2.42704\times10^{-13} n - 6.58073\times10^{-20} n^2 + 
+    			1.16759\times10^{-26} n^3 - 1.10283\times10^{-33} n^4 + 4.15462\times10^{-41} n^5$
+    			
+    			Utilizaremos un tamaño de problema n = 10000000 para el cálculo.
+    			
+    			Calculamos el número de operaciones para un tamaño de problema n con la funcion de complejidad temporal del peor caso:
+    			
+    			$$f_{tpc}(10000000) = 5log_210000000 = 116~operaciones$$
+    			
+    			Ahora, calculamos el tiempo en segundos con el polinomio:
+    			
+    			$$P(10000000) = 1.3689\times10^{-6}~ segundos$$
+    			
+    			El tiempo en que tarda cada operación básica es:
+    			
+    			$$Tiempo~x~op.~básica = \frac{1.3689\times10^{-6}}{116} = 1.18\times10^{-8}~segundos$$
+    			
+    			\subsubsection{Evaluación de tamaños de problema n's}
+    			Para n = 50000000
+    			
+                $P(50000000) = 0.00739832~ segundos$
+    
+    			Para n = 100000000
+    			
+    			$P(100000000) = 0.316222~ segundos$
+    			
+    			Para n = 500000000
+    			
+    			$P(500000000) = 1230.84~ segundos$
+    			
+    			Para n = 1000000000
+    			
+    			$P(1000000000) = 40455~ segundos$
+    			
+    			Para n = 5000000000
+    			
+    			$P(5000000000) = 1.29144\times10^{8}~ segundos$
+    			
+			\subsubsection{Cota O mayúscula del algoritmo}
+
+		    	\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/cotas/Binaria.PNG}
+			    \end{figure}
+			    
+			    \subsubsection{Cota O mayúscula del polinomio}
+			    Al tratarse de un polinomio de grado 5, su cota de complejidad O sera $O(n^5)$.
 				
 \newpage
 		% ----------------------------------------------------
@@ -364,37 +501,57 @@ backgroundcolor=\color{gray75},
 		\subsection{Búsqueda Binaria (Hilos)}
 			
 			\subsubsection{Funcionamiento}
+			Según la cantidad n de hilos que se envíen como parámetro al ejecutar el programa, estos dividirán el arreglo en n partes. En cada una de ellas se ejecutará de manera simultanea el algoritmo de búsqueda binaria indicado anteriormente; se divide en dos cada pedazo del arreglo y se recorre hasta encontrar el número, ya sea a la izquierda o derecha. Con ayuda del número de hilos podemos establecer los rangos, con un índice (posición del arreglo) de inicio y otro de fin, que le corresponderán a cada hilo en su ejecución.
 			
 			\subsubsection{Ejecución del algoritmo}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[width=0.8\textwidth]{images/pruebas/binariahilos.png}
+			    	   \includegraphics[width=0.9\textwidth]{images/pruebas/binariahilos.png}
 			    \end{figure}
 			
 			\subsubsection{Análisis temporal promedio}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[scale=0.75]{images/tablas/binariahilos.PNG}
+			    	   \includegraphics[width=0.95\textwidth]{images/tablas/binariahilos.PNG}
 			    \end{figure}
 			
 			\subsubsection{Gráfica de comportamiento}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[scale=0.8]{images/graficas/binariahilos.PNG}
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/binariahilos.PNG}
 			    \end{figure}
 			
 			\subsubsection{Aproximación Polinomial}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[width=0.75\textwidth]{images/polinomios/binariahilos.PNG}
-			    	   \caption*{\textbf{Grado 8: $0.0000208055 + 1.3099\times10^{-11} x - 2.07682\times10^{-17} x^2 + 1.34802\times10^-{23} x^3 - 4.71663\times10^-30 x^4 + 9.64\times10^{-37} x^5 - 1.13965\times10^{-43} x^6 + 7.15912\times10^{-51} x^7 - 1.83887\times10^{-58} x^8$}}
+			    	   \includegraphics[width=0.85\textwidth]{images/polinomios/binariahilos.PNG}
+			    	   \caption*{\textbf{Grado 5: $0.0000211462 + 6.03491\times10^{-12} x - 5.65412\times10^{-18} x^2 + 
+                        1.76786\times10^{-24} x^3 - 2.1856\times10^{-31} x^4 + 9.28242\times10^{-39} x^5$}}
 			    \end{figure}
 			
-			\subsubsection{Tiempo por cada operación básica}
-			
 			\subsubsection{Evaluación de tamaños de problema n's}
-			
-			\subsubsection{Cotas O mayúscula}
+    			Para n = 50000000
+    			
+                $P(50000000) = 1.74193~ segundos$
+    
+    			Para n = 100000000
+    			
+    			$P(100000000) = 72.6801\times10^{6}~ segundos$
+    			
+    			Para n = 500000000
+    			
+    			$P(500000000) = 276635~ segundos$
+    			
+    			Para n = 1000000000
+    			
+    			$P(1000000000) = 9.06562\times10^6~ segundos$
+    			
+    			Para n = 5000000000
+    			
+    			$P(5000000000) = 2.88712\times10^{10}~ segundos$
+
+			\subsubsection{Cota O mayúscula del polinomio}
+			    Al tratarse de un polinomio de grado 5, su cota de complejidad O sera \textbf{$O(n^5)$}.
 		
 \newpage
 
@@ -405,38 +562,130 @@ backgroundcolor=\color{gray75},
 		\subsection{Árbol de Búsqueda Binaria}
 			
 			\subsubsection{Análisis teórico a priori}
+				\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/cotas/ABB_Analisis.PNG}
+			    \end{figure}
 			
 			\subsubsection{¿Por qué no usar hilos?}
+			    Por que no se puede hacer la segmentación de manera correcta como en los demás algoritmos. La segmentación y recorrido del árbol en diferentes rangos va desechando aquellos nodos en los que no se encuentra el número a buscar, por lo que solo causaría que en muchos de ellos no buscaran nada, lo cual seria un gasto de recursos al crear los hilos.
 			
 			\subsubsection{Ejecución del algoritmo}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[width=0.8\textwidth]{images/pruebas/abb.png}
+			    	   \includegraphics[width=0.9\textwidth]{images/pruebas/abb.png}
 			    \end{figure}
 
 			\subsubsection{Análisis temporal promedio}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[scale=0.75]{images/tablas/ABB.PNG}
+			    	   \includegraphics[width=0.95\textwidth]{images/tablas/ABB.PNG}
 			    \end{figure}
 			
 			\subsubsection{Gráfica de comportamiento}
 				\begin{figure}[H]
 			    	   \centering
-			    	   \includegraphics[scale=0.8]{images/graficas/ABB.PNG}
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/ABB.PNG}
 			    \end{figure}
 			
 			\subsubsection{Aproximación Polinomial}
-			
+    			\begin{figure}[H]
+    			  \centering
+    			 \includegraphics[width=0.85\textwidth]{images/polinomios/abb.PNG}
+    			    	   \caption*{\textbf{Grado 1: $1.15287\times10^{-6} + 1.33212\times10^{-13} x$}}
+    			  \end{figure}
+
+
 			\subsubsection{Tiempo por cada operación básica}
+			    Tomamos la función de complejidad temporal del peor caso. \textcolor{blue}{ Peor Caso $f_{tpc}(n) = n$}
 			
+    			Luego, tomamos el polinomio obtenido en la aproximación polinomial en función de n: $P(n) = 1.15287\times10^{-6} + 1.33212\times10^{-13} x$
+    			
+    			Utilizaremos un tamaño de problema n = 10000000 para el cálculo.
+    			
+    			Calculamos el número de operaciones para un tamaño de problema n con la función de complejidad temporal del peor caso:
+    			
+    			$$f_{tpc}(10000000) = 10000000 = 10000000 ~operaciones$$
+    			
+    			Ahora, calculamos el tiempo en segundos con el polinomio:
+    			
+    			$$P(10000000) = 2.48499\times10^{-6}~ segundos$$
+    			
+    			El tiempo en que tarda cada operación básica es:
+    			
+    			$$Tiempo~x~op.~básica = \frac{2.48499\times10^{-6}}{10000000} = 2.48499\times10^{-13}~segundos$$
+\newpage
 			\subsubsection{Evaluación de tamaños de problema n's}
+    			Para n = 50000000
+    			
+                $P(50000000) = 7.81347\times10^{-6}~ segundos$
+    
+    			Para n = 100000000
+    			
+    			$P(100000000) = 0.0000144741~ segundos$
+    			
+    			Para n = 500000000
+    			
+    			$P(500000000) = 0.0000677589~ segundos$
+    			
+    			Para n = 1000000000
+    			
+    			$P(1000000000) = 0.000134365~ segundos$
+    			
+    			Para n = 5000000000
+    			
+    			$P(5000000000) = 0.000667213~ segundos$
+    		
+			\subsubsection{Cota O mayúscula del algoritmo}
+			    \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/cotas/ABB.PNG}
+			    \end{figure}
+			    
+			\subsubsection{Cota O mayúscula del polinomio}
+			    Al tratarse de un polinomio de grado 1, su cota de complejidad O sera \textbf{$O(n)$}.
 			
-			\subsubsection{Cotas O mayúscula}
-			
+		% ----------------------------------------------------
+		% 					COMPARATIVAS
+		% ----------------------------------------------------
+		\newpage	
 			\subsection{Comparativa gráfica de comportamiento (Tiempo Real promedio)}
 			
+			\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/comp1.PNG}
+			    \end{figure}
+			    
+			    \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/comp2.PNG}
+			    \end{figure}
+			    \newpage
+			\subsection{Comparativa gráfica de comportamiento con Hilos (Tiempo Real promedio)}
+			
+			    \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/graficas/comphilos.PNG}
+			    \end{figure}
+			
 			\subsection{Comparativa de aproximaciones polinomiales}
+			\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/polinomios/comp.PNG}
+			    \end{figure}
+			    
+			    \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/polinomios/comp2.PNG}
+			    \end{figure}
+			
+			\subsection{Comparativa de aproximaciones polinomiales (Hilos)}
+			\begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.9\textwidth]{images/polinomios/comphilos.PNG}
+			    \end{figure}
+			
+\newpage
 
 		% ----------------------------------------------------
 		% 					CUESTIONARIO
@@ -445,48 +694,72 @@ backgroundcolor=\color{gray75},
 		\subsection{Cuestionario}
 		\begin{enumerate}
 			        \item ¿Cuál de los 3 algoritmos es más fácil de implementar?\\
-			        .\\
+			        \textbf{El algoritmo de Búsqueda Lineal, ya que las operaciones que utiliza son menores en comparación con los otros algoritmos.}
 			        
 			        \item ¿Cuál de los 3 algoritmos es más difícil de implementar?\\
-			        .\\
+			        \textbf{Podría considerase que el algoritmo del Árbol de Búsqueda Binaria fue el más complejo debido al uso de apuntadores que se realizó, los otros dos no hacen uso de éstos.}
 			        
 			        \item ¿Cuál de los 3 algoritmos es el más difícil de implementar en su variante con hilos?\\
-			        .\\
+			        \textbf{El algoritmo  de Búsqueda Binaria, pues primero fue necesario identificar en que sección del código se debía de colocar el algoritmo. Además, había que tomar en cuenta el inicio y el fin de cada hilo, y adecuarlo a las variables de control.}
 			        
 			        \item ¿Cuál de los 3 algoritmos en su variante con hilos resultó ser más rápido?\\
-			        .\\
+			        \textbf{El de Búsqueda Lineal, ya que se repartió el trabajo de recorrido y comparación posición por posición entre varios hilos simultáneos.}
 			        
 			        \item ¿Cuál algoritmo tiene menor complejidad temporal?\\
-	                .\\
+	                \textbf{El de Búsqueda Binaria.}
 			        
 			        \item ¿Cuál algoritmo tiene mayor complejidad temporal?\\
-			        . \\
-			        
-			        
+			        \textbf{El Árbol de Búsqueda Binaria, teniendo en cuenta que no este balanceado, y la Búsqueda Lineal.}
 			        \item ¿El comportamiento experimental de los algoritmos era el esperado?¿Por qué?\\
-			        .\\
+			        \textbf{En la implementación normal de éstos sí. En cambio, en su implementación con hilos sólo hubo mejora en la Búsqueda Lineal, pues en la Binaria el tiempo incluso aumento. Estos es debido a que se utiliza tiempo para crear los hilos, establecer los rangos del arreglo, inicializarlos y esperar a que terminen. Esto significa un uso de recursos innecesario.}
 			        
 			        \item ¿Sus resultados experimentales difieren mucho de los análisis teóricos que se analizaron? ¿A que se debe?\\
-			        .\\
+			        \textbf{A grandes rasgos no. Ambos análisis se encuentran dentro de la misma cota de complejidad. En algunos tamaños de problema existen tiempos muy altos o muy pequeños que no siguen el comportamiento esperado del algoritmo.}
 			        
 			        \item ¿Los resultados experimentales de las implementaciones con hilos de los algoritmos realmente tardaron F(t)/#hilos de su implementación sin hilos?\\
-			        .\\
+			        \textbf{Sí, pues se hicieron pruebas experimentales en las implementaciones con hilos de los algoritmos creando un único hilo, para comparar los resultados con los de su implementación sin hilos, y efectivamente los tiempos coinciden.}
 			        
 			        \item ¿Cuál es el \% de mejora que tiene cada uno de los algoritmos en su variante con hilos?¿Es lo que esperabas?¿Por qué?\\
-			        .\\
+			        \textbf{Para la Búsqueda Lineal, utilizando dos hilos, los tiempos reales promedio mejoraron en un 18.65\% en promedio con respecto a los de la implementación sin hilos.}
+			        
+			        \textbf{En cambio, para la Búsqueda Binaria, utilizando dos hilos, los tiempos reales promedio empeoraron en un 94.64\% en promedio con respecto a los de la implementación sin hilos.}
 			        
 			        \item ¿Existió un entorno controlado para realizar las pruebas experimentales?¿Cuál fue?
 			        .\\
+			         \textbf{Si, se realizaron las búsquedas con distintos tamaños de problema (n's) según el algoritmo, todos al mismo tiempo. Todos los algoritmos fueron probados en la misma máquina al momento de realizar las gráficas comparativas. Solo para el caso del ABB se ingresaron 10 millones de números en desorden, para los otros dos algoritmos estaban ordenados.}
 			        
 			        \item ¿Si solo se realizara el análisis teórico de un algoritmo antes de implementarlo, podrías asegurar cuál es el mejor?\\
-			        .\\
+			        \textbf{Sí, pues a pesar de que no todas las veces se obtendrán las mismas funciones de \\complejidad temporal exactas, éstas siempre estarán contenidas dentro de la cota de complejidad correspondiente al algoritmo.}
 			        
-			        \item ¿Qué tan difícil fue realizar el análisis teórico de cada algoritmo?\\
-			        .\\
-			        
-			        \item ¿Qué recomendaciones darían a nuevos equipos para realizar esta práctica?\\
-			        .\\
-			        
+			        \item ¿Qué tan difícil fue realizar el análisis teórico de cada algoritmo?
+			        \begin{itemize}
+			            \item[\checkmark] \textbf{Búsqueda Lineal:}
+			            
+			                \textbf{Relativamente sencillo, pues es la solución a la que llamamos Bruta.}
+			                
+			            \item[\checkmark] \textbf{Búsqueda Binaria:}
+			            
+			                \textbf{A simple vista pareciera que el orden de complejidad de este algoritmo es lineal, pero hay que prestar mucha atención a la operación que se realiza en la variable \textit{centro}, pues va dividiendo el contador de dos en dos.}
+			            
+			            \item[\checkmark] \textbf{ABB: }
+			            
+			                \textbf{En este algoritmo, el mayor problema fue el ver los diferentes casos que podrían pasar, tenía la posibilidad de ser un árbol balanceado o no balanceado, entonces algunas cosas cambian totalmente.}
+			                
+			        \end{itemize}
+			        \item ¿Qué recomendaciones darían a nuevos equipos para realizar esta práctica?
+			        \begin{itemize}
+			            \item \textbf{Comprobar los algoritmos con n pequeñas con el objetivo de verificar que el algoritmo esta funcionando de forma correcta, si funciona con n pequeñas también lo hará con las mayores.}
+			            
+			            \item \textbf{Estudiar y comprender el funcionamiento de hilos en el lenguaje C.}
+			            
+			            \item \textbf{Probar los hilos en C con programas y ejemplos sencillos, que reflejen el comportamiento real de su ejecución.}
+			            
+			            \item \textbf{Utilizar algún software matemático como Matlab o Mathematica (Wolfram Alpha) para calcular los polinomios.}
+			            
+			            \item \textbf{Hacer uso de scripts que faciliten la compilación y ejecución de los algoritmos para muchos tamaños de problema.}
+			            
+			            \item \textbf{No usar Windows. }
+			        \end{itemize}
 			    \end{enumerate}
 	
 	% /////////////////////////////////////////////////////////
@@ -494,6 +767,29 @@ backgroundcolor=\color{gray75},
 	% ////////////////////////////////////////////////////////
 	
 	\section{Errores detectados}
+	\begin{itemize}
+	    \item [\checkmark] Al compilar los algoritmos de búsqueda Lineal y Binaria en su implementación con hilos aparecen los siguientes warnings en la terminal:
+	    
+	    \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.8\textwidth]{images/pruebas/warning2.png}
+			    	   \caption{Warning al compilar la Búsqueda Lineal con hilos}
+			    \end{figure}
+			    
+			    
+	    \begin{figure}[H]
+			    	   \centering
+			    	   \includegraphics[width=0.8\textwidth]{images/pruebas/warning.png}
+			    	   \caption{Warning al compilar la Búsqueda Binaria con hilos}
+			    \end{figure}
+			    
+		Sin embargo, podemos ignorar estas advertencias pues los ejecutables son generados de manera correcta.
+		
+		\item [\checkmark] En la implementación de la Búsqueda Binaria con hilos, los tiempos de ejecución son mucho mayores a los de la implementación sin hilos.
+		
+		
+	    
+	\end{itemize}
 
 \newpage
 
@@ -531,7 +827,7 @@ backgroundcolor=\color{gray75},
 	\section{Bibliografía}
 	
 	$[1]$ E. A. Franco Martínez, “Análisis temporal y notación de orden (Algoritmos de búsqueda)” Análisis de Algoritmos, Escuela Superior de Computación, Instituto Politécnico Nacional,
-    Ciudad de México, México, Practica01.pdf, Sep. 2018
+    Ciudad de México, México, Practica02.pdf, Sep. 2018
   
     $[2]$ (2018) WolframAlpha. Accessed september 2018. [Online]. \\Available: http://www.wolframalpha.com/
 
