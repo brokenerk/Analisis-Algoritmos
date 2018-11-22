@@ -9,7 +9,7 @@ int main(void)
 	char c2[1000];
 	scanf("%s", c1);
 	scanf("%s", c2);
-	printf("Tam de la LCS: %d \n", LCS(c1, c2) );
+	printf("%d \n", LCS(c1, c2) );
 }
 
 int LCS(char *a, char *b)
