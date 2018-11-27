@@ -273,60 +273,48 @@ backgroundcolor=\color{gray75},
   \section{Easy Longest Increasing Subsequence}
   
     \subsection{Redacción}
-        \begin{figure}[h!]
-	        \centering
-	        \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio06/Images/2_B.PNG}
-	 	\end{figure} 
+        Dada una lista de números A, muestra la longitud de la subsecuencia en aumento más larga. Una subsecuencia en aumento se define como un conjunto ${i0, i1, i2, i3, ..., ik}$ tal que $0 <= i0 <i1 <i2 <i3 <... < ik < N$ y $A[i0] < A[i1] <A[i2] < ... < A[ik]$. Una subsecuencia en aumento más larga es una subsecuencia con el máximo k (longitud).
 
-        Tienes dos amigos \textbf{A} ambos quieres regalarles varios números enteros como obsequio. A tu primera amigo quieres regalarle $C_{1}$ enteros y a tu segundo amigo quieres regalarle $C_{2}$ enteros. No satisfecho con eso, también quieres que todos los regalos únicos, lo cual implica que no podrás regalar el mismo entero a ambos de tus amigos.
-        
-        Además de eso, a tu primer amigo no le gustan los enteros que son divisibles por el número primo $X$. A tu segundo amigo no le gustan los enteros que son divisibles por el número primo $Y$. Por su puesto, tu no le regalarás a tus amigos números que no les gusten.
-        
-        Tu objetivo es encontrar el mínimo número $V$, de tal modo que puedas dar los regalos a tus amigos utilizando únicamente enteros del conjunto $1$, $2$, $3$, ..., $V$. Por supuesto, tú podrías decidir no regalar algunos enteros de ese conjunto.
-        
-        Un número entero positivo mayor a 1 es llamado primo si no tiene divisores enteros positivos además del 1 y el mismo.
+   		Es decir, en la lista \{$33, 11, 22, 44$\} la subsecuencia \{$33, 44$\} y \{$11$\} son subsecuencias crecientes, mientras que \{$11, 22, 44$\} es la subsecuencia que más crece.
         
         \begin{multicols}{2}
             \noindent\textbf{Entrada} \\ 
-            Una línea que contiene cuatro enteros positivos $C_{1}$, $C_{2}$, $X$, $Y$.     \\
-            Se garantiza que $X$ y $Y$ son números primos.
+            La primera línea contiene un número N $(1 <= N <= 10)$, la longitud de la lista A.
             
         \columnbreak
             
             \noindent\textbf{Salida} \\
-            Una línea. Un entero que representa la respuesta al problema.
+            Una línea que contiene la longitud de la subsecuencia creciente más larga en A.
         \end{multicols}
         
-        \textbf{Ejemplo}    \\
-        \begin{figure}[h!]
-	        \centering
-	        \includegraphics[width=0.9\textwidth]{Abigail/Ejercicio06/Images/2_C.PNG}
-	 	\end{figure} 
 	 	
 \newpage
 
     \subsection{Captura del problema aceptado}
         \begin{figure}[h!]
 	        \centering
-	        \includegraphics[width=1.0\textwidth]{Abigail/Ejercicio06/Images/2_A.PNG}
+	        \includegraphics[width=1.0\textwidth]{Abigail/Ejercicio06/Images/2.PNG}
 	 	\end{figure} 
       
     \subsection{Explicación}
-    La solución \textbf{Bruta}, sería hacer un ciclo que valide cada elemento que tenemos e ir viendo cuales cumplen con las características, en el peor de los casos la complejidad es $O(n)$.
-    
-    La solución implementada se explica a continuación, con complejidad $O\left(log2[C_{1}+C_{2}]\right)$.:
-    
-        \begin{itemize}
-            \item Números no divisibles en el conjunto  \\
-            
-            Se busca el número de elementos que no son divisibles entre $X$ ó/y $Y$. 
-            
-            \item Revisar si se pueden regalar
-            
-            Se descartan regalos entre los amigos para no darles los mismos. 
-            
-            \item Revisar si los regalos no superan los regalos disponibles.
-        \end{itemize}
+    	Generamos subarreglos que a su vez vamos a determinar una subsecuencia creciente que contenga el último elemento de este subarreglo. Al finalizar obtendremos el más grande.
+
+    	Para programar dinámicamente se usa un arreglo para guardar las longitudes parciales de cada subarreglo y después se usa el máximo de ellos.
+
+    	Inicialmente la complejidad es $O\(2^{n}\)$, ya que se va haciendo uno por uno, pero con el algoritmo tenemos $O\(n^{2}\)$
+
+    	Usamos:
+
+    	\begin{equation*}
+    		\left
+    			\begin{aligned}
+    				1	\text{ si } i = 0
+    				max(d[j] + 1) \text{ si } a[j]<a[i]
+    			\end{aligned}
+    		\right\}
+    		\quad\text{dp[i]}
+    	\end{equation*}
+
 \newpage
     \subsection{Código}
     	\inputminted{c++}{Code/2.c}
@@ -353,7 +341,7 @@ backgroundcolor=\color{gray75},
         \textbf{Ejemplo}    \\
         \begin{figure}[h!]
             \centering
-            \includegraphics[width=0.9\textwidth]{Abigail/Ejercicio07/Images/2_C.PNG}
+            \includegraphics[width=0.9\textwidth]{Abigail/Ejercicio07/Images/3_A.PNG}
         \end{figure} 
         
 \newpage
@@ -365,23 +353,16 @@ backgroundcolor=\color{gray75},
         \end{figure} 
       
     \subsection{Explicación}
-    La solución \textbf{Bruta}, sería hacer un ciclo que valide cada elemento que tenemos e ir viendo cuales cumplen con las características, en el peor de los casos la complejidad es $O(n)$.
-    
-    La solución implementada se explica a continuación, con complejidad $O\left(log2[C_{1}+C_{2}]\right)$.:
-    
-        \begin{itemize}
-            \item Números no divisibles en el conjunto  \\
-            
-            Se busca el número de elementos que no son divisibles entre $X$ ó/y $Y$. 
-            
-            \item Revisar si se pueden regalar
-            
-            Se descartan regalos entre los amigos para no darles los mismos. 
-            
-            \item Revisar si los regalos no superan los regalos disponibles.
-        \end{itemize}
+   		La solución \textbf{Bruta}, sería hacer un ciclo que valide cada elemento que tenemos e ir viendo cuales cumplen con las características, es decir, hacemos todas las posibles combinaciones y elegimos la mejor de ellas. Obviamente esto es muy costoso porque dependera de la capaciddad y el valor de los elementos.
+		    
+		Analizamos que puede pasar para poder programar dinámicamente.
+
+		Imaginemos que vamos recorriendo los elementos que tenemos, si decidimos tomar ese elemento y llevarlo con nosotros, el valor máximo total es el valor máximo de la mochila más lo que ya habiamos acumulado anteriormente. Por otro lado, imaginemos que no tomamos ese elemento entonces el valor máximo será el último que habíamos tenido, o sea que no sumamos nada porque no lo elegimos.
+
+		Observamos que debemos sacar el máximo de esas dos opciones para que siempre agarremos el de menor peso.
+
 \newpage
     \subsection{Código}
-        \inputminted{c++}{Code/2.c}
+        \inputminted{c++}{Code/3.c}
 
 \end{document}
