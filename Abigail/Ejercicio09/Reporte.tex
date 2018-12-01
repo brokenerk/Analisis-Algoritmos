@@ -31,7 +31,7 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \pagestyle{fancy}
 \setlength{\headheight}{15pt} 
-\lhead{EJERCICIO 7 - Diseño de soluciones PD}
+\lhead{EJERCICIO 09}
 \rhead{\thepage}
 \lfoot{ESCOM-IPN}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -39,7 +39,7 @@
 \newcommand{\ve}[1]{\overrightarrow{#1}}
 \newcommand{\abs}[1]{\left\lvert #1 \right\lvert}
 \date{26 de febrero de 2017}
-\title{Pruebas a posteriori}
+\title{Ejercicio 09}
 \author{Reporte 1}
 
 \definecolor{pblue}{rgb}{0.13,0.13,1}
@@ -183,7 +183,7 @@ backgroundcolor=\color{gray75},
                 
                 % Title
                 
-                { \huge Ejercicio 06 - Diseño de soluciones con Programación Dinámica \\[1cm] }
+                { \huge Ejercicio 09 - Ejercicios sobre Prim, Kruskal y Dijkstra \\[1cm] }
                 
                 { \Large Unidad de aprendizaje: Análisis de algoritmos} \\[1cm]
                 
@@ -254,12 +254,23 @@ backgroundcolor=\color{gray75},
         \begin{figure}[h!]
           \centering
           \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/1_DR.PNG}
+          \caption{Se muestra el último nodo de la tabla}
         \end{figure} 
 
 
     \subsection{Prim}
 
       \subsubsection{Explicación}
+        \begin{itemize}
+
+          \item[\Checkmark] Crear tabla de las aristas junto a sus costos.
+
+          \item[\Checkmark] Nos colocamos en el nodo $1$ y buscamos quién tiene el menor costo, en este caso hacia el nodo $2$ tiene costo $3$.
+
+          \item[\Checkmark] Hacemos lo mismo para los demás nodos, siempre comparando y eligiendo al que tiene menor costo.
+
+        \end{itemize}
+
 
       \subsubsection{Tabla}
         \begin{figure}[h!]
@@ -274,6 +285,17 @@ backgroundcolor=\color{gray75},
         \end{figure} 
 
     \subsection{Kruskal}
+
+      \subsubsection{Explicación}
+        \begin{itemize}
+
+          \item[\Checkmark] Crear tabla de las aristas junto a sus costos pero ordenados de menor a mayor costo.
+
+          \item[\Checkmark] Nos colocamos en el nodo $1$ y agarramos al siguiente elemento en la tabla, en este caso el nodo $2$.
+
+          \item[\Checkmark] Hacemos lo mismo para los demás nodos, cuidando de no agarrar ciclos.
+
+        \end{itemize}
 
       \subsubsection{Tabla}
 
@@ -319,6 +341,7 @@ backgroundcolor=\color{gray75},
         \begin{figure}[h!]
           \centering
           \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/2_DR.PNG}
+          \caption{Se muestra el último nodo de la tabla}
         \end{figure} 
 
 
@@ -327,16 +350,33 @@ backgroundcolor=\color{gray75},
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/2_PT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/2_PR.PNG}
+        \end{figure} 
 
     \subsection{Kruskal}
 
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/2_KT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/2_KR.PNG}
+        \end{figure} 
 
   % -----------------------------------------------
   %                   EJERCICIO 03
@@ -360,12 +400,14 @@ backgroundcolor=\color{gray75},
         \begin{figure}[h!]
           \centering
           \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/3_DT.PNG}
+          
         \end{figure} 
 
       \subsubsection{Resultado}
         \begin{figure}[h!]
           \centering
           \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/3_DR.PNG}
+          \caption{Se muestra el último nodo de la tabla}
         \end{figure} 
 
 
@@ -373,11 +415,16 @@ backgroundcolor=\color{gray75},
 
       \subsubsection{Tabla}
 
-        Ruta más corta desde el nodo 1 hasta los demás.
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/3_PT.PNG}
+        \end{figure} 
 
-        \begin{itemize}
-          \item La ruta más costosa: 14 hacia el nodo 14.
-        \end{itemize}
+      \subsubsection{Resultado}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/3_PR.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
 
@@ -386,8 +433,17 @@ backgroundcolor=\color{gray75},
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/3_KT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/3_KR.PNG}
+        \end{figure} 
 
   % -----------------------------------------------
   %                   EJERCICIO 04
@@ -418,6 +474,7 @@ backgroundcolor=\color{gray75},
         \begin{figure}[h!]
           \centering
           \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/4_DR.PNG}
+          \caption{Se muestra el último nodo de la tabla}
         \end{figure} 
 
     \subsection{Prim}
@@ -425,16 +482,33 @@ backgroundcolor=\color{gray75},
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/4_PT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/4_PR.PNG}
+        \end{figure} 
 
     \subsection{Kruskal}
 
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+      \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/4_KT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/4_KR.PNG}
+        \end{figure} 
 
   % -----------------------------------------------
   %                   EJERCICIO 05
@@ -465,6 +539,7 @@ backgroundcolor=\color{gray75},
         \begin{figure}[h!]
           \centering
           \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/5_DR.PNG}
+          \caption{Se muestra el último nodo de la tabla}
         \end{figure} 
 
     \subsection{Prim}
@@ -472,15 +547,32 @@ backgroundcolor=\color{gray75},
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/5_PT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/5_PR.PNG}
+        \end{figure} 
 
     \subsection{Kruskal}
 
       \subsubsection{Explicación}
 
       \subsubsection{Tabla}
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/5_KT.PNG}
+        \end{figure} 
 
       \subsubsection{Resultado}
+
+        \begin{figure}[h!]
+          \centering
+          \includegraphics[width=0.7\textwidth]{Abigail/Ejercicio09/Images/5_KR.PNG}
+        \end{figure} 
 
 \end{document}
