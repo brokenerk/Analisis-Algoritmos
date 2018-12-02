@@ -7,7 +7,7 @@ int max(int a, int b){
     else return b;
 }
  
-char cadena[1000015];
+char *cadena = (char*)calloc(10000000, sizeof(char*));
 int main(){
     while(scanf("%s", cadena)) {
         if(strcmp(cadena, ".") == 0) break;
