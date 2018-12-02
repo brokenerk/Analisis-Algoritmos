@@ -10,8 +10,28 @@ int coefBi(int n, int k){
 		return 0;
 }
 
-int coefBiDP(int n, int k){
+int coefBiTD(int n, int k){
+	int i, j, tabla[n][k];
+	for(i = 0; i < n; i++)
+		for(j = 0; j < n; j++)
+			tabla[i][j] = -1;
+
+	if(k == 0 || k == n)
+		return 1;
+	else if(k > 0 && k < n){
+		if(tabla[n-1][k-1] == -1)
+			tabla[n-1][k-1] = coefBiTD(n-1, k-1);
+		if(tabla[n-1][k] == -1)
+			tabla[n-1][k] = coefBiTD(n-1, k);
+		return tabla[n-1][k-1] + tabla[n-1][k];
+	}
+	else
+		return 0;	
+}
+
+int coefBiBU(int n, int k){
 	int i, j, tabla[n+1][k+1];
+
 	for(i = 0; i <= n; i++)
 		tabla[i][0] = 1;
 
@@ -32,7 +52,8 @@ int coefBiDP(int n, int k){
 int main(){
 	int n, k;
 	scanf("%d %d", &n, &k);
-	//printf("%d\n", coefBi(n, k));
-	printf("%d\n", coefBiDP(n, k));
+	printf("Recursivo: %d\n", coefBi(n, k));
+	printf("Bottom Up: %d\n", coefBiBU(n, k));
+	printf("Top Down: %d\n", coefBiTD(n, k));
 	return 0;
 }
