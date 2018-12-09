@@ -1,2 +1,2 @@
 # Analisis-Algoritmos
-Analizar algoritmos xd
+Análisis e implementación de metodologías de optimización y algoritmos clásicos
