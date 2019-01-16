@@ -11,7 +11,7 @@
 */
 
 long long int Divisores(long long int num){
-	int exp = 0, divisores = 1, j = 2;
+	long long int exp = 0, divisores = 1, j = 2;
 	//Descomponemos el numero en factores primos
 
 	while(num != 0){
